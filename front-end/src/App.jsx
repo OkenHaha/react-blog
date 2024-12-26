@@ -5,6 +5,7 @@ import About from './pages/About'
 import ArticleList from './pages/ArticleList'
 import Article from './pages/Article'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'  //imported footer
 import NotFound from './pages/NotFound'
 import ProfilePage from  './pages/ProfilePage'
 
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <Router>
+      <div>
     <Navbar/>
       <div className="max-w-screen-md mx-auto pt-20">
       <Routes>
@@ -24,6 +26,9 @@ function App() {
         <Route path="*" element={<NotFound/>}/>
       </Routes>
       </div>
+      <Footer/> 
+      </div>
+      
     </Router>
   )
 }

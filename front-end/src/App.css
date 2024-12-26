@@ -39,3 +39,44 @@
 .read-the-docs {
   color: #888;
 }
+
+/* footer styling */
+footer {
+  background-color: #1e3a22; /* Dark green */
+  color: white;
+  padding: 2rem 1rem;
+}
+
+footer h4 {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #9ae6b4; /* Light green */
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer .footer-bottom {
+  margin-top: 2rem;
+  border-top: 1px solid #2f5d37;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  footer .footer-columns {
+    display: flex;
+    justify-content: space-between;
+  }
+}
