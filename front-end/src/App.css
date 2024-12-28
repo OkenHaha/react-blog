@@ -39,3 +39,67 @@
 .read-the-docs {
   color: #888;
 }
+
+
+/* Footer Styling */
+footer {
+  background-color: #1e3a22; /* Dark green background */
+  color: white;
+  padding: 2rem 1rem;
+  font-family: Arial, sans-serif; /* Ensure readability */
+}
+
+footer h4 {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+footer a:hover {
+  color: #9ae6b4; /* Light green hover color */
+  text-decoration: underline;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  margin-bottom: 0.5rem; /* Adds spacing between list items */
+}
+
+/* Footer Columns for Larger Screens */
+footer .footer-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  /* padding:40px; */
+}
+
+footer .footer-bottom {
+  margin-top: 2rem;
+  border-top: 1px solid #2f5d37;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem; /* Slightly smaller text for the footer-bottom */
+  color: #9ae6b4; /* Light green text */
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  footer {
+    padding: 3rem 2rem; /* Increase padding for larger screens */
+  }
+  footer ul li {
+    margin-bottom: 0.7rem; /* Adjust spacing for larger screens */
+  }
+}
