@@ -3,33 +3,36 @@
 @tailwind utilities;
 
 :root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-  }
-  
-  .dark {
-    --bg-color: #2e2e2e;
-    --text-color: rgb(247, 226, 226);
-  }
-  
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.5s, color 0.5s;
-  }
-  
-  .theme-toggler {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    position: relative;
-    display: flex;
-    left: 13px;
-    justify-content: space-between;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  .theme-toggler:hover {
-    transform: scale(1.2);
-  }
-  
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --dark-bg-color: #1E1E1E;
+  --dark-text-color: rgb(247, 226, 226);
+}
+
+.dark {
+  --bg-color: var(--dark-bg-color);
+  --text-color: var(--dark-text-color);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.theme-toggler {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  position: relative;
+  display: flex;
+  left: 10px;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.theme-toggler:active {
+  left: 1px;
+}
+

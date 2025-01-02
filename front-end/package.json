@@ -13,6 +13,7 @@
     "node": "22.x"
   },
   "dependencies": {
+    "@mui/icons-material": "^6.3.0",
     "axios": "^1.7.7",
     "jsonwebtoken": "^9.0.2",
     "react": "^18.2.0",
