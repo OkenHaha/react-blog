@@ -5,9 +5,12 @@
   "proxy": "https://react-blog-onlk.onrender.com",
   "type": "module",
   "scripts": {
+    "start": "node ./api/index.js",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "engines": {
     "node": "22.x"

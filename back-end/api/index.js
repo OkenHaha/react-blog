@@ -1,15 +1,14 @@
-// import { app } from "../app.js";
+// ...existing code...
 import { app } from "../app.js";
-// import { connectDB } from "../db.js";
 import { connectDB } from "../db.js";
-const port = 3000
+const port = 3000;
 
-try {
-  connectDB()
-  .then(()=>{
-    console.log("mongodb initialized")
-    app.listen(port,()=>`server running at ${port}`)
+connectDB()
+  .then(() => {
+    console.log("mongodb initialized");
+    app.listen(port, () => console.log(`server running at ${port}`));
   })
-} catch (error) {
-  console.error("cannot connect to db, check app.js trycach block")
-}
+  .catch((error) => {
+    console.error("cannot connect to db", error);
+  });
+// ...existing code...
