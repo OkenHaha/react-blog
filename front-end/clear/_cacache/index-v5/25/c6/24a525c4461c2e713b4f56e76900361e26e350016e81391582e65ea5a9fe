@@ -1,0 +1,2 @@
+
+82cdb885143997b1ac1cc89be77dc7df4e41912b	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/test-exclude/-/test-exclude-6.0.0.tgz","integrity":null,"time":1735822859487,"size":"0","metadata":{"time":1735822859487,"url":"http://registry.npmjs.org/test-exclude/-/test-exclude-6.0.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:00:57 GMT","location":"https://registry.npmjs.org/test-exclude/-/test-exclude-6.0.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

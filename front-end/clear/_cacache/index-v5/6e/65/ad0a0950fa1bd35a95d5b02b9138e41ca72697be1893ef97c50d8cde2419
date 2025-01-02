@@ -1,0 +1,2 @@
+
+65ae8cf7ea55a5981af708a858a318f8f03aeead	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/htmlparser2/-/htmlparser2-6.1.0.tgz","integrity":null,"time":1735822881832,"size":"0","metadata":{"time":1735822881832,"url":"http://registry.npmjs.org/htmlparser2/-/htmlparser2-6.1.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:19 GMT","location":"https://registry.npmjs.org/htmlparser2/-/htmlparser2-6.1.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

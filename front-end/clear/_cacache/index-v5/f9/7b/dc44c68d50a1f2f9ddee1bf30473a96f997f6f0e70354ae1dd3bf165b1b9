@@ -1,0 +1,2 @@
+
+8732eeb193ab448fc41878daf759d93232095bd6	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/bser/-/bser-2.1.1.tgz","integrity":null,"time":1735822887015,"size":"0","metadata":{"time":1735822887015,"url":"http://registry.npmjs.org/bser/-/bser-2.1.1.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:24 GMT","location":"https://registry.npmjs.org/bser/-/bser-2.1.1.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

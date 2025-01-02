@@ -1,0 +1,2 @@
+
+a5de330cd0d783fa42987a3cece3917ee1ff7a6c	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/webpack/-/webpack-5.97.1.tgz","integrity":null,"time":1735822847715,"size":"0","metadata":{"time":1735822847714,"url":"http://registry.npmjs.org/webpack/-/webpack-5.97.1.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:00:45 GMT","location":"https://registry.npmjs.org/webpack/-/webpack-5.97.1.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

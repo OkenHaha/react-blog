@@ -1,0 +1,2 @@
+
+b29c451142e9c0c76438b13aebc4e715cc825382	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/es-module-lexer/-/es-module-lexer-1.6.0.tgz","integrity":null,"time":1735822883759,"size":"0","metadata":{"time":1735822883759,"url":"http://registry.npmjs.org/es-module-lexer/-/es-module-lexer-1.6.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:21 GMT","location":"https://registry.npmjs.org/es-module-lexer/-/es-module-lexer-1.6.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

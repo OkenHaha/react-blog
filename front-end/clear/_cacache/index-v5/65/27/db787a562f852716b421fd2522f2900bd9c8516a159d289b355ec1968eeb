@@ -1,0 +1,2 @@
+
+f6519c33303a30385d5e09db5ad73531907ee9e3	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/compression/-/compression-1.7.5.tgz","integrity":null,"time":1735822886094,"size":"0","metadata":{"time":1735822886094,"url":"http://registry.npmjs.org/compression/-/compression-1.7.5.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:23 GMT","location":"https://registry.npmjs.org/compression/-/compression-1.7.5.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

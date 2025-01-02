@@ -1,0 +1,2 @@
+
+ec5ea97a5e7195bf9f7457804659868e7c837bab	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/exit/-/exit-0.1.2.tgz","integrity":null,"time":1735822883249,"size":"0","metadata":{"time":1735822883249,"url":"http://registry.npmjs.org/exit/-/exit-0.1.2.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:21 GMT","location":"https://registry.npmjs.org/exit/-/exit-0.1.2.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

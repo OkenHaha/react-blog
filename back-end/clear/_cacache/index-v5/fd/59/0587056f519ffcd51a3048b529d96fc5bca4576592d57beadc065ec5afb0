@@ -1,0 +1,2 @@
+
+3ec9c7a3e8963d96448180bbc8005b68dfd7a129	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz","integrity":null,"time":1735823043424,"size":"0","metadata":{"time":1735823043424,"url":"http://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:04:01 GMT","location":"https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

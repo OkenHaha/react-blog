@@ -1,0 +1,2 @@
+
+44f854450f7b6cceb4db836504d28e10a3bce62c	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/@types/yargs/-/yargs-17.0.33.tgz","integrity":null,"time":1735822895349,"size":"0","metadata":{"time":1735822895349,"url":"http://registry.npmjs.org/@types/yargs/-/yargs-17.0.33.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:33 GMT","location":"https://registry.npmjs.org/@types/yargs/-/yargs-17.0.33.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

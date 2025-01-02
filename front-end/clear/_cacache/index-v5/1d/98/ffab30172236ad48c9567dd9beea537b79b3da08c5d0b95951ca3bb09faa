@@ -1,0 +1,2 @@
+
+c35bfb50b722405e4e21454ba1e694cff974bfa4	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/node-forge/-/node-forge-1.3.1.tgz","integrity":null,"time":1735822878307,"size":"0","metadata":{"time":1735822878307,"url":"http://registry.npmjs.org/node-forge/-/node-forge-1.3.1.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:15 GMT","location":"https://registry.npmjs.org/node-forge/-/node-forge-1.3.1.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

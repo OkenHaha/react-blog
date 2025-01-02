@@ -1,0 +1,2 @@
+
+02a2f013224105d92c2d3b754134d1701e2fd623	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/whatwg-fetch/-/whatwg-fetch-3.6.20.tgz","integrity":null,"time":1735822847686,"size":"0","metadata":{"time":1735822847686,"url":"http://registry.npmjs.org/whatwg-fetch/-/whatwg-fetch-3.6.20.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:00:45 GMT","location":"https://registry.npmjs.org/whatwg-fetch/-/whatwg-fetch-3.6.20.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

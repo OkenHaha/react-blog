@@ -1,0 +1,2 @@
+
+60cbed6bc8357cabd67b8b765b923f170a59dd26	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/css-what/-/css-what-6.1.0.tgz","integrity":null,"time":1735822885363,"size":"0","metadata":{"time":1735822885363,"url":"http://registry.npmjs.org/css-what/-/css-what-6.1.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:22 GMT","location":"https://registry.npmjs.org/css-what/-/css-what-6.1.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

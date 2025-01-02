@@ -1,0 +1,2 @@
+
+502eeab7efd449a34c4f38f8f50a2e7fa6ff84c3	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/raf/-/raf-3.4.1.tgz","integrity":null,"time":1735822875840,"size":"0","metadata":{"time":1735822875839,"url":"http://registry.npmjs.org/raf/-/raf-3.4.1.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:13 GMT","location":"https://registry.npmjs.org/raf/-/raf-3.4.1.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

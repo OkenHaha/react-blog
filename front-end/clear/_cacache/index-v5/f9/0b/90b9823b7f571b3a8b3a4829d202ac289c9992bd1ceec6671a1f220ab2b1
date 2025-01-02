@@ -1,0 +1,2 @@
+
+5d0647d4698dabc017eb6964684913e546ac7e64	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/bn.js/-/bn.js-5.2.1.tgz","integrity":null,"time":1735822887317,"size":"0","metadata":{"time":1735822887317,"url":"http://registry.npmjs.org/bn.js/-/bn.js-5.2.1.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:25 GMT","location":"https://registry.npmjs.org/bn.js/-/bn.js-5.2.1.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

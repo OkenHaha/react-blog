@@ -1,0 +1,2 @@
+
+36468e3d137706de0d42e291c2f94b13429c0bf1	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.11.tgz","integrity":null,"time":1735823043909,"size":"0","metadata":{"time":1735823043908,"url":"http://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.11.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:04:01 GMT","location":"https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.11.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

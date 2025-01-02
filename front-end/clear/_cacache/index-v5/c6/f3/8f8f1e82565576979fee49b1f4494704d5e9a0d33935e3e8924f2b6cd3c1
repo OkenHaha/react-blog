@@ -1,0 +1,2 @@
+
+473ea9b4aadf59af59972df242e7a764c532b81d	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz","integrity":null,"time":1735822867376,"size":"0","metadata":{"time":1735822867376,"url":"http://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:05 GMT","location":"https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

@@ -1,0 +1,2 @@
+
+0e41b3cb25ac6ea3de38791e4fe28a99c7938d75	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/jest-worker/-/jest-worker-27.5.1.tgz","integrity":null,"time":1735822879542,"size":"0","metadata":{"time":1735822879542,"url":"http://registry.npmjs.org/jest-worker/-/jest-worker-27.5.1.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:17 GMT","location":"https://registry.npmjs.org/jest-worker/-/jest-worker-27.5.1.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

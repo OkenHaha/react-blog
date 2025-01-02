@@ -1,0 +1,2 @@
+
+df8ccc23a1a3a4b8efe07c29441f8bc74f11ac1e	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/depd/-/depd-2.0.0.tgz","integrity":null,"time":1735823043627,"size":"0","metadata":{"time":1735823043627,"url":"http://registry.npmjs.org/depd/-/depd-2.0.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:04:01 GMT","location":"https://registry.npmjs.org/depd/-/depd-2.0.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

@@ -1,0 +1,2 @@
+
+8982bb923bbbf35ced26510eadcfe0c0e1224423	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/address/-/address-1.2.2.tgz","integrity":null,"time":1735822888013,"size":"0","metadata":{"time":1735822888013,"url":"http://registry.npmjs.org/address/-/address-1.2.2.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:25 GMT","location":"https://registry.npmjs.org/address/-/address-1.2.2.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

@@ -1,0 +1,2 @@
+
+86b9f22b59fab28e5d20f6d2a742353df1e3b672	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/mime/-/mime-1.6.0.tgz","integrity":null,"time":1735822878583,"size":"0","metadata":{"time":1735822878583,"url":"http://registry.npmjs.org/mime/-/mime-1.6.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:16 GMT","location":"https://registry.npmjs.org/mime/-/mime-1.6.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

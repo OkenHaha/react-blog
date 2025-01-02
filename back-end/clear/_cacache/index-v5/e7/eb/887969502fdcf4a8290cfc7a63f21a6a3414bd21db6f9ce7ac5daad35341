@@ -1,0 +1,2 @@
+
+630b31e33e7a93f6721354e2db80812954012156	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/node-addon-api/-/node-addon-api-5.1.0.tgz","integrity":null,"time":1735823043063,"size":"0","metadata":{"time":1735823043063,"url":"http://registry.npmjs.org/node-addon-api/-/node-addon-api-5.1.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:04:01 GMT","location":"https://registry.npmjs.org/node-addon-api/-/node-addon-api-5.1.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

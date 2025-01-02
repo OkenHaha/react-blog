@@ -1,0 +1,2 @@
+
+3c525b4c88c21ae809326774c196ac15ac90b958	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/call-bound/-/call-bound-1.0.3.tgz","integrity":null,"time":1735822886849,"size":"0","metadata":{"time":1735822886848,"url":"http://registry.npmjs.org/call-bound/-/call-bound-1.0.3.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:24 GMT","location":"https://registry.npmjs.org/call-bound/-/call-bound-1.0.3.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

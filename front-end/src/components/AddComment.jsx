@@ -5,7 +5,7 @@ const AddComment = ({ articleName, setArticleInfo }) => {
   const [username, setUsername] = useState('');
   const [commentText, setCommentText] = useState('');
 
-  const url "react-blog-server-gamma.vercel.app"
+  // const url "react-blog-server-gamma.vercel.app"
 
   const addComments = async () => {
     try {

@@ -1,0 +1,2 @@
+
+712f43d5f4954a3dd52d423f1e1912d15906205f	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/multicast-dns/-/multicast-dns-7.2.5.tgz","integrity":null,"time":1735822878339,"size":"0","metadata":{"time":1735822878338,"url":"http://registry.npmjs.org/multicast-dns/-/multicast-dns-7.2.5.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:15 GMT","location":"https://registry.npmjs.org/multicast-dns/-/multicast-dns-7.2.5.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

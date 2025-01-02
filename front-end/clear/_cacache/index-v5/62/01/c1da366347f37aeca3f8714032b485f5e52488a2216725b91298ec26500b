@@ -1,0 +1,2 @@
+
+1df28f5f14e9de1f03ca2fa6d066aac36f061230	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/autoprefixer","integrity":null,"time":1735822915204,"size":"0","metadata":{"time":1735822915203,"url":"http://registry.npmjs.org/autoprefixer","reqHeaders":{"accept":"application/json"},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:53 GMT","location":"https://registry.npmjs.org/autoprefixer","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

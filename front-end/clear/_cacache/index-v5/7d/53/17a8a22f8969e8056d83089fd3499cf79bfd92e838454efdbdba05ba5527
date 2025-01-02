@@ -1,0 +1,2 @@
+
+a879b1cf962fe9564172378cf82feaa944fac630	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/@jest/console/-/console-27.5.1.tgz","integrity":null,"time":1735822890291,"size":"0","metadata":{"time":1735822890291,"url":"http://registry.npmjs.org/@jest/console/-/console-27.5.1.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:27 GMT","location":"https://registry.npmjs.org/@jest/console/-/console-27.5.1.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

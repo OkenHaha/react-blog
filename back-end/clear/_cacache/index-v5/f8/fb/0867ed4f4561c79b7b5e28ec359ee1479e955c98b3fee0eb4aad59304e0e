@@ -1,0 +1,2 @@
+
+083f68430f309beb19a92800c504b9dbc383c902	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz","integrity":null,"time":1735823043943,"size":"0","metadata":{"time":1735823043943,"url":"http://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:04:01 GMT","location":"https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

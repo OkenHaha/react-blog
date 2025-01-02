@@ -1,0 +1,2 @@
+
+33fa9c930d05bd3b7f0606fe00f399d4f6664a18	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/assert/-/assert-2.1.0.tgz","integrity":null,"time":1735822887814,"size":"0","metadata":{"time":1735822887814,"url":"http://registry.npmjs.org/assert/-/assert-2.1.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:25 GMT","location":"https://registry.npmjs.org/assert/-/assert-2.1.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

@@ -1,0 +1,2 @@
+
+9742b7a0b7615ed2382556ccaba661cd933766ee	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/@jest/globals/-/globals-27.5.1.tgz","integrity":null,"time":1735822890290,"size":"0","metadata":{"time":1735822890290,"url":"http://registry.npmjs.org/@jest/globals/-/globals-27.5.1.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:27 GMT","location":"https://registry.npmjs.org/@jest/globals/-/globals-27.5.1.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

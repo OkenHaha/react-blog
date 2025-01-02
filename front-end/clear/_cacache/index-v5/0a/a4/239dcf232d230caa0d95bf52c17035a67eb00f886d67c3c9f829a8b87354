@@ -1,0 +1,2 @@
+
+55a680bd47e80473a695f8a4d6ae2346c7a40ec7	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/emojis-list/-/emojis-list-3.0.0.tgz","integrity":null,"time":1735822883968,"size":"0","metadata":{"time":1735822883967,"url":"http://registry.npmjs.org/emojis-list/-/emojis-list-3.0.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:21 GMT","location":"https://registry.npmjs.org/emojis-list/-/emojis-list-3.0.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

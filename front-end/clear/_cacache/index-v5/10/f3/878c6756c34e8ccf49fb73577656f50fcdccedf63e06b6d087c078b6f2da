@@ -1,0 +1,2 @@
+
+54bdb5876ce499a0aada755fed324a291dabef89	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/language-tags/-/language-tags-1.0.9.tgz","integrity":null,"time":1735822879168,"size":"0","metadata":{"time":1735822879168,"url":"http://registry.npmjs.org/language-tags/-/language-tags-1.0.9.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:16 GMT","location":"https://registry.npmjs.org/language-tags/-/language-tags-1.0.9.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

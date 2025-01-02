@@ -1,0 +1,2 @@
+
+f6318c50ea5a888a9b0a1401e24d740108255000	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/pretty-bytes/-/pretty-bytes-5.6.0.tgz","integrity":null,"time":1735822876010,"size":"0","metadata":{"time":1735822876010,"url":"http://registry.npmjs.org/pretty-bytes/-/pretty-bytes-5.6.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:13 GMT","location":"https://registry.npmjs.org/pretty-bytes/-/pretty-bytes-5.6.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

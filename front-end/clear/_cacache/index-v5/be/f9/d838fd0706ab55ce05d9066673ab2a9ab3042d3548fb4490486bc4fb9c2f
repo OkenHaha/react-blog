@@ -1,0 +1,2 @@
+
+a93d76ce2e709dea8facd7c3da8305bb964f8633	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/faye-websocket/-/faye-websocket-0.11.4.tgz","integrity":null,"time":1735822883213,"size":"0","metadata":{"time":1735822883213,"url":"http://registry.npmjs.org/faye-websocket/-/faye-websocket-0.11.4.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:20 GMT","location":"https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.11.4.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

@@ -1,0 +1,2 @@
+
+f240cc280038a04dae951befc05974fed32b078d	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/browserify-sign/-/browserify-sign-4.2.3.tgz","integrity":null,"time":1735822887021,"size":"0","metadata":{"time":1735822887021,"url":"http://registry.npmjs.org/browserify-sign/-/browserify-sign-4.2.3.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:24 GMT","location":"https://registry.npmjs.org/browserify-sign/-/browserify-sign-4.2.3.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

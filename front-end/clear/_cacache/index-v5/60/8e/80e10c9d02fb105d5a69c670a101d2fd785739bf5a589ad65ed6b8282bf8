@@ -1,0 +1,2 @@
+
+f9d8daebe17e8eea623c01b3c48fe88a159771bd	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/lower-case/-/lower-case-2.0.2.tgz","integrity":null,"time":1735822878793,"size":"0","metadata":{"time":1735822878793,"url":"http://registry.npmjs.org/lower-case/-/lower-case-2.0.2.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:16 GMT","location":"https://registry.npmjs.org/lower-case/-/lower-case-2.0.2.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

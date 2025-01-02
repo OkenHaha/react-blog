@@ -1,0 +1,2 @@
+
+1d712bf48f268a5e921df2ac5e4a3ba40007d85b	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/send/-/send-0.18.0.tgz","integrity":null,"time":1735823042930,"size":"0","metadata":{"time":1735823042930,"url":"http://registry.npmjs.org/send/-/send-0.18.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:04:00 GMT","location":"https://registry.npmjs.org/send/-/send-0.18.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

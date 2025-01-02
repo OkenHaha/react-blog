@@ -1,0 +1,2 @@
+
+04b786c3f8103fadb7ad3f45f9d9137965c0241e	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/strip-bom/-/strip-bom-4.0.0.tgz","integrity":null,"time":1735822860965,"size":"0","metadata":{"time":1735822860965,"url":"http://registry.npmjs.org/strip-bom/-/strip-bom-4.0.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:00:58 GMT","location":"https://registry.npmjs.org/strip-bom/-/strip-bom-4.0.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

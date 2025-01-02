@@ -1,0 +1,2 @@
+
+29610a33daf155460f1efd998b17f1803fcdd882	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz","integrity":null,"time":1735822864914,"size":"0","metadata":{"time":1735822864914,"url":"http://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:02 GMT","location":"https://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

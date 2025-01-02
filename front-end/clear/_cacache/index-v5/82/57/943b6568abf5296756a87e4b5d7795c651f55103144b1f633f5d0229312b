@@ -1,0 +1,2 @@
+
+086f021a1bd557dc0bc1299cbc4a8e65126df29e	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/node-releases/-/node-releases-2.0.19.tgz","integrity":null,"time":1735822878304,"size":"0","metadata":{"time":1735822878304,"url":"http://registry.npmjs.org/node-releases/-/node-releases-2.0.19.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:15 GMT","location":"https://registry.npmjs.org/node-releases/-/node-releases-2.0.19.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

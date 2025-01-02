@@ -1,0 +1,2 @@
+
+bc2652033ff1afe8dce9c16eb33b140284cdf1bd	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/postcss-svgo/-/postcss-svgo-5.1.0.tgz","integrity":null,"time":1735822876123,"size":"0","metadata":{"time":1735822876123,"url":"http://registry.npmjs.org/postcss-svgo/-/postcss-svgo-5.1.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:14 GMT","location":"https://registry.npmjs.org/postcss-svgo/-/postcss-svgo-5.1.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

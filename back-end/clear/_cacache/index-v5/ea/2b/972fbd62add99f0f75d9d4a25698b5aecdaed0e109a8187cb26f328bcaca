@@ -1,0 +1,2 @@
+
+76e23ded5dcc53d4407d9d3b0803b08d1096e971	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz","integrity":null,"time":1735823043127,"size":"0","metadata":{"time":1735823043127,"url":"http://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:04:01 GMT","location":"https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

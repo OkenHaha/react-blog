@@ -1,0 +1,2 @@
+
+a263f1c977ba3fbc8f6cc5b8dca851ab4f149b67	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/sockjs/-/sockjs-0.3.24.tgz","integrity":null,"time":1735822870250,"size":"0","metadata":{"time":1735822870250,"url":"http://registry.npmjs.org/sockjs/-/sockjs-0.3.24.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:08 GMT","location":"https://registry.npmjs.org/sockjs/-/sockjs-0.3.24.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

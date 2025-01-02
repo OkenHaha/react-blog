@@ -1,0 +1,2 @@
+
+8d911c767d41ff82529c912f0999c329d0a60c53	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/minipass/-/minipass-5.0.0.tgz","integrity":null,"time":1735823043095,"size":"0","metadata":{"time":1735823043095,"url":"http://registry.npmjs.org/minipass/-/minipass-5.0.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:04:01 GMT","location":"https://registry.npmjs.org/minipass/-/minipass-5.0.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

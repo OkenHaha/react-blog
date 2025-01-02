@@ -1,0 +1,2 @@
+
+7ad1fcd76389dedec0010a69819d2667a10286fe	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/brorand/-/brorand-1.1.0.tgz","integrity":null,"time":1735822887139,"size":"0","metadata":{"time":1735822887139,"url":"http://registry.npmjs.org/brorand/-/brorand-1.1.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:24 GMT","location":"https://registry.npmjs.org/brorand/-/brorand-1.1.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

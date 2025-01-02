@@ -1,0 +1,2 @@
+
+99561eb4dc346983513775c5b638f9c39285f7fd	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/inflight/-/inflight-1.0.6.tgz","integrity":null,"time":1735823043300,"size":"0","metadata":{"time":1735823043300,"url":"http://registry.npmjs.org/inflight/-/inflight-1.0.6.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:04:01 GMT","location":"https://registry.npmjs.org/inflight/-/inflight-1.0.6.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

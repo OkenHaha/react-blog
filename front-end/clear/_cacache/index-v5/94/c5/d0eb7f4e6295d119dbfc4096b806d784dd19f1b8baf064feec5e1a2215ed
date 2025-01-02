@@ -1,0 +1,2 @@
+
+86c95b07537de3acd233a3f78837702bc360d1d5	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/string_decoder/-/string_decoder-1.3.0.tgz","integrity":null,"time":1735822897484,"size":"0","metadata":{"time":1735822897484,"url":"http://registry.npmjs.org/string_decoder/-/string_decoder-1.3.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:35 GMT","location":"https://registry.npmjs.org/string_decoder/-/string_decoder-1.3.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

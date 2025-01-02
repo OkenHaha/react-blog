@@ -1,0 +1,2 @@
+
+48b28ccf5e9d0acae06e14ef02584ddba436ea4d	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/destroy/-/destroy-1.2.0.tgz","integrity":null,"time":1735822884653,"size":"0","metadata":{"time":1735822884653,"url":"http://registry.npmjs.org/destroy/-/destroy-1.2.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:22 GMT","location":"https://registry.npmjs.org/destroy/-/destroy-1.2.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

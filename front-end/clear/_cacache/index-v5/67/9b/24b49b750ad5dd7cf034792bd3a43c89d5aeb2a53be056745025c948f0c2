@@ -1,0 +1,2 @@
+
+9e8e92f4f8c7d3fbecc7ab739baf1dcf2cac2703	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/commondir/-/commondir-1.0.1.tgz","integrity":null,"time":1735822886101,"size":"0","metadata":{"time":1735822886101,"url":"http://registry.npmjs.org/commondir/-/commondir-1.0.1.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:23 GMT","location":"https://registry.npmjs.org/commondir/-/commondir-1.0.1.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

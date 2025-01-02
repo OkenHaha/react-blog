@@ -1,0 +1,2 @@
+
+4951b36c05b7be034a22127df87971de4e59a48f	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/imurmurhash/-/imurmurhash-0.1.4.tgz","integrity":null,"time":1735822881211,"size":"0","metadata":{"time":1735822881211,"url":"http://registry.npmjs.org/imurmurhash/-/imurmurhash-0.1.4.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:18 GMT","location":"https://registry.npmjs.org/imurmurhash/-/imurmurhash-0.1.4.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

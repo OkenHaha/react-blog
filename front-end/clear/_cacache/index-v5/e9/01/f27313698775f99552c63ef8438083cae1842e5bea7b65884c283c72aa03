@@ -1,0 +1,2 @@
+
+05bfeb6ee025249424ac8f7971195d46c2f53101	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/hpack.js/-/hpack.js-2.1.6.tgz","integrity":null,"time":1735822882073,"size":"0","metadata":{"time":1735822882073,"url":"http://registry.npmjs.org/hpack.js/-/hpack.js-2.1.6.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:19 GMT","location":"https://registry.npmjs.org/hpack.js/-/hpack.js-2.1.6.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

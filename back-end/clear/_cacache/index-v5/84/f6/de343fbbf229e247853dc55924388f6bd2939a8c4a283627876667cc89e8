@@ -1,0 +1,2 @@
+
+8f9497ea45a9c4cb8402b6d3f703a0acee8b55f6	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/ip-address/-/ip-address-9.0.5.tgz","integrity":null,"time":1735823043299,"size":"0","metadata":{"time":1735823043299,"url":"http://registry.npmjs.org/ip-address/-/ip-address-9.0.5.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:04:01 GMT","location":"https://registry.npmjs.org/ip-address/-/ip-address-9.0.5.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

@@ -1,0 +1,2 @@
+
+561c6ef82c53cb4b9dc4f4efcaa903b4dc0a225d	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/browserify-zlib/-/browserify-zlib-0.2.0.tgz","integrity":null,"time":1735822886999,"size":"0","metadata":{"time":1735822886999,"url":"http://registry.npmjs.org/browserify-zlib/-/browserify-zlib-0.2.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:24 GMT","location":"https://registry.npmjs.org/browserify-zlib/-/browserify-zlib-0.2.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

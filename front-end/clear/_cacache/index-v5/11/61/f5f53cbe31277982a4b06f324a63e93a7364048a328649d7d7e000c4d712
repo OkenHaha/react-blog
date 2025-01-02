@@ -1,0 +1,2 @@
+
+30352dae650848e2113d5c9c44ce135e6c02c9a7	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/selfsigned/-/selfsigned-2.4.1.tgz","integrity":null,"time":1735822874558,"size":"0","metadata":{"time":1735822874558,"url":"http://registry.npmjs.org/selfsigned/-/selfsigned-2.4.1.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:12 GMT","location":"https://registry.npmjs.org/selfsigned/-/selfsigned-2.4.1.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

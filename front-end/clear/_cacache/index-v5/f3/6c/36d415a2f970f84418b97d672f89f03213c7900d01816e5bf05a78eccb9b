@@ -1,0 +1,2 @@
+
+0e764ca1a2a4b18ea3fe50c128f142561b81c020	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/@svgr/plugin-svgo/-/plugin-svgo-5.5.0.tgz","integrity":null,"time":1735822889478,"size":"0","metadata":{"time":1735822889478,"url":"http://registry.npmjs.org/@svgr/plugin-svgo/-/plugin-svgo-5.5.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:27 GMT","location":"https://registry.npmjs.org/@svgr/plugin-svgo/-/plugin-svgo-5.5.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

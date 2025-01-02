@@ -1,0 +1,2 @@
+
+0f3f8768964db35e8ddaaaf514ed713dd4d55569	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/tsutils/-/tsutils-3.21.0.tgz","integrity":null,"time":1735822851075,"size":"0","metadata":{"time":1735822851075,"url":"http://registry.npmjs.org/tsutils/-/tsutils-3.21.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:00:48 GMT","location":"https://registry.npmjs.org/tsutils/-/tsutils-3.21.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

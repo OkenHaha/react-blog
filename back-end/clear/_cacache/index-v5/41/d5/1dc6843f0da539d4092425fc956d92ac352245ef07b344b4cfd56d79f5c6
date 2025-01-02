@@ -1,0 +1,2 @@
+
+9d552e3ef11a77b4d3e85c9ee70427c14168c039	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/nopt/-/nopt-1.0.10.tgz","integrity":null,"time":1735823043052,"size":"0","metadata":{"time":1735823043052,"url":"http://registry.npmjs.org/nopt/-/nopt-1.0.10.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:04:01 GMT","location":"https://registry.npmjs.org/nopt/-/nopt-1.0.10.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

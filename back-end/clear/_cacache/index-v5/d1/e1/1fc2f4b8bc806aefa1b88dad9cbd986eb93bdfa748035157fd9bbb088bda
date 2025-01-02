@@ -1,0 +1,2 @@
+
+d768de7a7f99391d4959369a3d46506634ce4694	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/@aws-crypto/sha256-js/-/sha256-js-3.0.0.tgz","integrity":null,"time":1735823045201,"size":"0","metadata":{"time":1735823045201,"url":"http://registry.npmjs.org/@aws-crypto/sha256-js/-/sha256-js-3.0.0.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:04:03 GMT","location":"https://registry.npmjs.org/@aws-crypto/sha256-js/-/sha256-js-3.0.0.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

@@ -1,0 +1,2 @@
+
+6dd17cb9a8be2db1b2d76dab3a712f1986d2b511	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/glob/-/glob-7.2.3.tgz","integrity":null,"time":1735822882556,"size":"0","metadata":{"time":1735822882556,"url":"http://registry.npmjs.org/glob/-/glob-7.2.3.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:20 GMT","location":"https://registry.npmjs.org/glob/-/glob-7.2.3.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

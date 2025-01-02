@@ -1,0 +1,2 @@
+
+c362fd1b54f1629034089b558b21971512bdea16	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz","integrity":null,"time":1735822875829,"size":"0","metadata":{"time":1735822875829,"url":"http://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:13 GMT","location":"https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

@@ -1,0 +1,2 @@
+
+5f77b53ffe863202d58d1426808a52c3501663e4	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/braces/-/braces-3.0.3.tgz","integrity":null,"time":1735823043825,"size":"0","metadata":{"time":1735823043825,"url":"http://registry.npmjs.org/braces/-/braces-3.0.3.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:04:01 GMT","location":"https://registry.npmjs.org/braces/-/braces-3.0.3.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

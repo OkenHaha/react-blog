@@ -1,0 +1,2 @@
+
+592d0d3f79460a5f4d32067c274a3bd5edbf5780	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/hash.js/-/hash.js-1.1.7.tgz","integrity":null,"time":1735822882066,"size":"0","metadata":{"time":1735822882066,"url":"http://registry.npmjs.org/hash.js/-/hash.js-1.1.7.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:01:19 GMT","location":"https://registry.npmjs.org/hash.js/-/hash.js-1.1.7.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}

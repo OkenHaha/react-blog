@@ -1,0 +1,2 @@
+
+906abedf27405d37d2cdce2f81b77a0567834c25	{"key":"make-fetch-happen:request-cache:http://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz","integrity":null,"time":1735823042933,"size":"0","metadata":{"time":1735823042933,"url":"http://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz","reqHeaders":{},"resHeaders":{"content-type":"text/plain;charset=UTF-8","date":"Thu, 02 Jan 2025 13:04:00 GMT","location":"https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz","vary":"Accept-Encoding"},"options":{"compress":true},"status":301}}
