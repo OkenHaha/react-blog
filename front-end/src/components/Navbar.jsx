@@ -163,7 +163,7 @@ const Navbar = ({ theme, toggleTheme }) => {
   return (
     <>
       <nav className="border-b-4 border-green-700 text-center fixed top-0 bg-green-900 font-bold w-full text-lg text-white">
-        <ul>
+        <ul className="sm:flex sm:justify-evenly">
           <li className="inline-block py-4">
             <Link to="/" className="pl-6 pr-8">Home</Link>
           </li>
@@ -177,10 +177,10 @@ const Navbar = ({ theme, toggleTheme }) => {
             {isLoggedIn ? (
               <div>
                 <p className="inline-block mr-4 cursor-pointer hover:text-green-300" onClick={handleProfileClick}>{user}</p>
-                <button onClick={logout} className="hover:text-red-300">Logout</button>
+                <button onClick={logout} className="bg-green-500 text-white px-3 rounded-lg hover:bg-green-600">Logout</button>
               </div>
             ) : (
-              <button type="button" onClick={handleOpen} className="hover:text-green-300">Login/Register</button>
+              <button type="button" onClick={handleOpen} className="bg-green-500 text-white px-3 rounded-lg hover:bg-green-600">Login/Register</button>
             )}
           </li>
           <li className="inline-block py-4">
