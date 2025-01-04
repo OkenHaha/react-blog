@@ -32,18 +32,18 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4">Follow Us</h4>
             <ul className="flex space-x-4">
               <li>
-                <a
+                {/* <a
                   href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-blue-500"
                 >
                   Facebook
-                </a>
+                </a> */}
               </li>
               <li>
                 <a
-                  href="https://twitter.com"
+                  href="https://x.com/_SWOC_"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-blue-400"
