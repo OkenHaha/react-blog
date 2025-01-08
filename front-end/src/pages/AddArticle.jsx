@@ -20,12 +20,22 @@ const AddArticleModal = ({ onClose, onSuccess }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const payload = new FormData();
+        payload.append('title', formData.title);
+        payload.append('content', formData.content);
+        payload.append('thumbnail', formData.thumbnail); // Append file here
+    
         try {
             const token = localStorage.getItem('token');
             const response = await axios.post(
-                url + '/api/article/addarticle',
-                { ...formData },
-                { headers: { Authorization: `Bearer ${token}` } }
+                `${url}/api/article/addarticle`,
+                payload,
+                {
+                    headers: { 
+                        Authorization: `Bearer ${token}`,
+                        'Content-Type': 'multipart/form-data',
+                    },
+                }
             );
             onSuccess(response.data.article);
             onClose();
@@ -33,6 +43,7 @@ const AddArticleModal = ({ onClose, onSuccess }) => {
             setError(err.response?.data?.error || 'Error creating article');
         }
     };
+    
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
@@ -89,18 +100,18 @@ const AddArticleModal = ({ onClose, onSuccess }) => {
 
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1">
-                                Thumbnail URL
+                                Thumbnail
                             </label>
                             <input
-                                type="text"
+                                type="file"
                                 name="thumbnail"
-                                placeholder="Enter thumbnail URL"
-                                value={formData.thumbnail}
-                                onChange={handleChange}
+                                accept="image/*"
+                                onChange={(e) => setFormData({ ...formData, thumbnail: e.target.files[0] })}
                                 required
                                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
                             />
                         </div>
+
 
                         <div className="flex space-x-4 pt-4">
                             <button
