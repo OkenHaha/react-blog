@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -10,19 +10,19 @@ import ProfilePage from "./pages/ProfilePage";
 import EditProfilePage from "./pages/EditProfilePage";
 import EditArticle from "./pages/EditArticle";
 import FAQ from "./pages/FAQ";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme as toggle } from "./store/authSlice";
+
 function App() {
-  const [theme, setTheme] = useState("light");
+  const theme = useSelector((state) => state.auth.theme);
+  const dispatch = useDispatch()
+
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "light";
-    setTheme(savedTheme);
-    document.documentElement.className = savedTheme;
-  }, []);
+    document.documentElement.className = theme;
+  }, [theme]);
 
   const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    document.documentElement.className = newTheme;
+    dispatch(toggle())
   };
 
   return (

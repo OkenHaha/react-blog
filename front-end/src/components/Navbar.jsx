@@ -5,6 +5,8 @@ import menuIcon from "../assets/menu.svg";
 import closeIcon from "../assets/close.svg";
 import { link } from "./Baselink";
 import { BsMoon, BsSun } from "react-icons/bs";  // You can import icons from react-icons
+import { login as authLogin, logout as authLogout } from "../store/authSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = ({ theme, toggleTheme }) => {
   axios.interceptors.request.use(
@@ -19,7 +21,7 @@ const Navbar = ({ theme, toggleTheme }) => {
   );
 
   const url = `${link}`;
-  const [loginCredential, setLoginCredential] = useState("");
+  const [loginCredential, setLoginCredential] = useState(useSelector((state) => state.auth.user));
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -30,13 +32,14 @@ const Navbar = ({ theme, toggleTheme }) => {
   const [error, setError] = useState("");
   const [open, setOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const isLoggedIn = useSelector((state) => state.auth.authStatus); 
   const [user, setUser] = useState("");
   const [toggle, setToggle] = useState(false);
   const [otp, setOtp] = useState('');
   const [showOtpInput, setShowOtpInput] = useState(false);
   const [registrationData, setRegistrationData] = useState(null);
   const navigate = useNavigate();
+  const dispatch = useDispatch()
 
   const login = async (event) => {
     event.preventDefault();
@@ -58,8 +61,7 @@ const Navbar = ({ theme, toggleTheme }) => {
       });
       const token = response.data.token;
       localStorage.setItem("token", `Bearer ${token}`);
-      setIsLoggedIn(true);
-      setUser(response.data.username);
+      dispatch(authLogin(response.data.username));
       navigate("/");
       handleClose();
       resetForm();
@@ -92,8 +94,7 @@ const Navbar = ({ theme, toggleTheme }) => {
 
       const token = response.data.token;
       localStorage.setItem("token", `Bearer ${token}`);
-      setIsLoggedIn(true);
-      setUser(loginCredential);
+      dispatch(authLogin(loginCredential));
       navigate("/");
       handleClose();
       resetForm();
@@ -178,20 +179,18 @@ const Navbar = ({ theme, toggleTheme }) => {
       axios
         .get(url + "/api/auth/getProfile")
         .then((response) => {
-          setIsLoggedIn(true);
-          setUser(response.data.user.username);
+          dispatch(authLogin(response.data.user.username));
         })
         .catch(() => {
-          setIsLoggedIn(false);
           localStorage.removeItem("token");
+          dispatch(authLogout());
         });
     }
   }, []);
 
   const logout = () => {
-    setIsLoggedIn(false);
     localStorage.removeItem("token");
-    setUser("");
+    dispatch(authLogout())
     navigate("/");
   };
 
