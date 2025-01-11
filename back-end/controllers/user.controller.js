@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import {User} from '../models/user.model.js';
+import { User } from '../models/user.model.js';
 import OTP from '../models/otp.model.js';
 import dotenv from 'dotenv';
 import { Article } from '../models/article.model.js';
@@ -309,4 +309,64 @@ const deleteUserAccount = async (req, res) => {
   }
 };
 
-export { getProfile, registerUser, loginUser, editProfile, deleteUserAccount };
+const resetPassword = async (req, res) => {
+  try {
+    const { email, otp, newPassword, confirmPassword } = req.body;
+
+    if (!email || !otp || !newPassword || !confirmPassword) {
+      return res.status(400).json({
+        error: "Email, OTP, and password are required"
+      });
+    }
+
+    if (newPassword !== confirmPassword) {
+      return res.status(400).json({
+        error: "New password and confirm password do not match"
+      });
+    }
+
+    // Find user
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({
+        error: "No user found with this email"
+      });
+    }
+
+    //use strong password
+    if (!newPassword || newPassword.length < 8 || !/(?=.*[A-Z])/.test(newPassword) || !/(?=.*[0-9])/.test(newPassword) || !/(?=.*[!@#$%^&*])/.test(newPassword)) {
+      return res.status(400).json({
+        error: "Password must be at least 8 characters long, contain at least one uppercase letter, one number, and one special character (!@#$%^&*)"
+      });
+    }
+
+    // Verify OTP
+    const latestOTP = await OTP.findOne({ email }).sort({ createdAt: -1 }).limit(1);
+    if (!latestOTP || latestOTP.otp !== otp) {
+      return res.status(400).json({
+        error: "Invalid or expired OTP"
+      });
+    }
+
+    // Delete used OTP
+    await OTP.deleteMany({ email });
+
+    // Hash and update password
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    user.password = hashedPassword;
+    await user.save();
+
+    res.status(200).json({
+      message: "Password reset successful",
+      user
+    });
+
+  } catch (error) {
+    console.error("Error resetting password:", error);
+    res.status(500).json({
+      error: "An error occurred while resetting the password"
+    });
+  }
+};
+
+export { getProfile, registerUser, loginUser, editProfile, deleteUserAccount, resetPassword };
