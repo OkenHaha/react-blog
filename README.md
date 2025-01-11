@@ -64,18 +64,18 @@ Ensure you have the following installed:
    npm install
    ```
 
-<<<<<<< HEAD
 4. Set up the database connection:
 
    - Copy your MongoDB connection URL.
    - Create a `.env` file in the `back-end` directory.
    - Add the following line to the `.env` file:
-=======
-4. Set up the `.env` file:
+
+5. Set up the `.env` file:
+
    - Navigate to the `back-end` directory.
    - Create a `.env` file.
    - Add the following environment variables to the `.env` file:
->>>>>>> upstream/main
+
      ```env
      CONNECTION_URL="your-mongodb-connection-url"
      PORT=8080
@@ -97,7 +97,7 @@ Ensure you have the following installed:
      MAIL_PASS="test-passkey"
      ```
 
-5. Start the development server:
+6. Start the development server:
 
    ```bash
    cd back-end
@@ -106,7 +106,7 @@ Ensure you have the following installed:
 
    This command uses **concurrently** to run both frontend and backend servers simultaneously.
 
-6. Open the application in your browser:
+7. Open the application in your browser:
    - Frontend: `http://localhost:3000`
    - Backend: `http://localhost:5000`
 
@@ -137,7 +137,6 @@ We’re thrilled to have you contribute to this project! Please follow these ste
 
 <h3>Project Contributers❤️: <h3>
 <a href="https://github.com/OkenHaha/react-blog/graphs/contributors">
-<<<<<<< HEAD
 <img src="https://contributors-img.web.app/image?repo=OkenHaha/react-blog"/>
 <a href="https://github.com/ASLawan">
 
@@ -233,6 +232,3 @@ process.env.PORT
 
 After all is said and done, ensure that you add this file to your **.gitignore** file.  
 This ensures safety and security, protecting its contents from unauthorized access.
-=======
-<img src="https://contributors-img.web.app/image?repo=OkenHaha/react-blog"/>
->>>>>>> upstream/main
