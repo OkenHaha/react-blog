@@ -118,6 +118,7 @@ We’re thrilled to have you contribute to this project! Please follow these ste
 <h3>Project Contributers❤️: <h3>
 <a href="https://github.com/OkenHaha/react-blog/graphs/contributors">
 <img src="https://contributors-img.web.app/image?repo=OkenHaha/react-blog"/>
+<a href="https://github.com/ASLawan">
 
 ## Setting up .env file.
 
