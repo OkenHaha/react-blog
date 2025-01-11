@@ -112,34 +112,6 @@ Ensure you have the following installed:
 
 ---
 
-## Contribution Guidelines 🔧
-
-We’re thrilled to have you contribute to this project! Please follow these steps to get started:
-
-1. Fork the repository and clone it locally.
-2. Create a new branch for your feature or bugfix:
-   ```bash
-   git checkout -b your-branch-name
-   ```
-3. Make your changes and commit them with clear and concise commit messages.
-4. Push your changes to your forked repository:
-   ```bash
-   git push origin your-branch-name
-   ```
-5. Create a pull request (PR) from your branch to the `main` branch of this repository.
-6. Wait for review and feedback.
-
-### Pro Tips 💡
-
-- Follow the code style and standards outlined in the repository.
-- Check the `CONTRIBUTING.md` file for detailed contribution rules.
-- Join discussions on issues and share your ideas!
-
-<h3>Project Contributers❤️: <h3>
-<a href="https://github.com/OkenHaha/react-blog/graphs/contributors">
-<img src="https://contributors-img.web.app/image?repo=OkenHaha/react-blog"/>
-<a href="https://github.com/ASLawan">
-
 ## Setting up .env file.
 
 This is a very important file and every project needs to have it. This file allows you to securely prevent  
@@ -232,3 +204,31 @@ process.env.PORT
 
 After all is said and done, ensure that you add this file to your **.gitignore** file.  
 This ensures safety and security, protecting its contents from unauthorized access.
+
+## Contribution Guidelines 🔧
+
+We’re thrilled to have you contribute to this project! Please follow these steps to get started:
+
+1. Fork the repository and clone it locally.
+2. Create a new branch for your feature or bugfix:
+   ```bash
+   git checkout -b your-branch-name
+   ```
+3. Make your changes and commit them with clear and concise commit messages.
+4. Push your changes to your forked repository:
+   ```bash
+   git push origin your-branch-name
+   ```
+5. Create a pull request (PR) from your branch to the `main` branch of this repository.
+6. Wait for review and feedback.
+
+### Pro Tips 💡
+
+- Follow the code style and standards outlined in the repository.
+- Check the `CONTRIBUTING.md` file for detailed contribution rules.
+- Join discussions on issues and share your ideas!
+
+<h3>Project Contributers❤️: <h3>
+<a href="https://github.com/OkenHaha/react-blog/graphs/contributors">
+<img src="https://contributors-img.web.app/image?repo=OkenHaha/react-blog"/>
+<a href="https://github.com/ASLawan">
