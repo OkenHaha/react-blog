@@ -51,7 +51,6 @@ function App() {
             element={<EditArticle loggedInUserId={loggedInUserId} />}
           />
           <Route path="/forgot-password" element={<ForgotPassword theme={theme} />} />
-          <Route path="/search" element={<SearchPage />}/>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
