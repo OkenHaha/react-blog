@@ -442,7 +442,7 @@ const Navbar = ({ theme, toggleTheme }) => {
       </nav>
       {open && (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
-          <div className={`relative w-full max-w-sm p-8 rounded-lg shadow-2xl ${theme === 'dark' ? 'bg-gray-900 text-slate-100' : 'bg-slate-200'}`}>
+          <div className={`relative w-full max-w-sm  rounded-lg shadow-2xl ${theme === 'dark' ? 'bg-gray-900 text-slate-100' : 'bg-slate-200'}`}>
             <button
               onClick={handleClose}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-900 text-2xl font-bold"
@@ -474,7 +474,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                     onChange={(event) => setEmail(event.target.value)}
                     placeholder="Email"
                     required
-                    className={`w-full p-3 rounded-lg border ${email ? 'border-green-500' : 'border-gray-300'} focus:ring-2 focus:ring-green-500 focus:outline-none ${theme === 'dark' ? 'bg-gray-700 text-white' : 'text-gray-700'}`}
+                    className={`w-full rounded-lg border ${email ? 'border-green-500' : 'border-gray-300'} focus:ring-2 focus:ring-green-500 focus:outline-none ${theme === 'dark' ? 'bg-gray-700 text-white' : 'text-gray-700'}`}
                   />
                   <input
                     type="text"
@@ -489,7 +489,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                     value={location}
                     onChange={(event) => setLocation(event.target.value)}
                     placeholder="Location (Optional)"
-                    className={`w-full p-3 rounded-lg border ${location ? 'border-green-500' : 'border-gray-300'} focus:ring-2 focus:ring-green-500 focus:outline-none ${theme === 'dark' ? 'bg-gray-700 text-white' : 'text-gray-700'}`}
+                    className={`w-full rounded-lg border ${location ? 'border-green-500' : 'border-gray-300'} focus:ring-2 focus:ring-green-500 focus:outline-none ${theme === 'dark' ? 'bg-gray-700 text-white' : 'text-gray-700'}`}
                   />
                   <input
                     type="text"
@@ -502,7 +502,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                     type="date"
                     value={dob}
                     onChange={(event) => setDob(event.target.value)}
-                    className={`w-full p-3 rounded-lg border ${dob ? 'border-green-500' : 'border-gray-300'} focus:ring-2 focus:ring-green-500 focus:outline-none ${theme === 'dark' ? 'bg-gray-700 text-white' : 'text-gray-700'}`}
+                    className={`w-full rounded-lg border ${dob ? 'border-green-500' : 'border-gray-300'} focus:ring-2 focus:ring-green-500 focus:outline-none ${theme === 'dark' ? 'bg-gray-700 text-white' : 'text-gray-700'}`}
                   />
                 </>
               )}
@@ -512,7 +512,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                 onChange={(event) => setPassword(event.target.value)}
                 placeholder="Password"
                 required
-                className={`w-full p-3 rounded-lg border ${password ? 'border-green-500' : 'border-gray-300'} focus:ring-2 focus:ring-green-500 focus:outline-none ${theme === 'dark' ? 'bg-gray-700 text-white' : 'text-gray-700'}`}
+                className={`w-full rounded-lg border ${password ? 'border-green-500' : 'border-gray-300'} focus:ring-2 focus:ring-green-500 focus:outline-none ${theme === 'dark' ? 'bg-gray-700 text-white' : 'text-gray-700'}`}
               />
               {error && (
                 <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
