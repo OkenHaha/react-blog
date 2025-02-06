@@ -22,6 +22,8 @@
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.5s, color 0.5s;
+    margin-left: 2vw;
+    margin-right: 2vw;
     /* cursor: none; */
   }
   
