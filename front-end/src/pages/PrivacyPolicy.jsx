@@ -1,65 +1,87 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
 
-const PrivacyPolicy = () => {
+export default function PrivacyPolicy() {
   return (
-    <div className="container mx-auto p-36">
-      <div className=' bg-[#f2efde] dark:bg-[#141b28] p-12 rounded-lg'>
-      <h1 className="text-5xl font-bold mb-4">Privacy Policy</h1>
-      <p className="mb-4 text-lg">
-        Welcome to React Blog! Your privacy is important to us. This Privacy Policy explains how we collect,
-        use, and protect your information when you use our platform.
-      </p>
+    <div className="bg-gray-50 dark:bg-[#141b28] min-h-screen flex justify-center items-center px-5 py-10 pt-24">
+      <div className="max-w-6xl w-full bg-white dark:bg-[#00001c] shadow-lg rounded-xl flex flex-col md:flex-row overflow-hidden p-6">
+        {/* Left Section for Image (Hidden on Mobile) */}
+        <div className="w-full md:w-2/5 bg-gray-100 dark:bg-[#1a2332] p-6 hidden md:flex flex-col items-center">
+          <img
+            src="https://img.freepik.com/free-vector/privacy-policy-concept-illustration_114360-7478.jpg"
+            alt="Privacy Illustration"
+            className="w-full rounded-lg mb-4"
+          />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRau28_GXYA1DEeVWt14zMA4ztRzKvdUXcpCf15AjTFCdyArIopLUos_Bk9MF1WYA8vwU4&usqp=CAU"
+            alt="Privacy Illustration"
+            className="w-full rounded-lg"
+          />
+        </div>
 
-      <div className='bg-[#ecdf96] dark:bg-[#00001c] p-4 rounded-lg'>
-        <h2 className="text-2xl font-semibold mt-2">1. Information We Collect</h2>
-        <p className="mb-4 pt-5">
-            We collect information that you provide directly to us, such as your name, email address, and blog content.
-            Additionally, we may collect data related to your interactions with the platform, such as comments and likes.
-        </p>
-      </div>
+        {/* Right Section - Privacy Policy Content */}
+        <div className="w-full md:w-3/5 p-6 md:p-10">
+          <h1 className="text-3xl md:text-4xl font-bold text-blue-600 dark:text-yellow-400 mb-4">
+            Privacy Policy
+          </h1>
 
-      <div className=' bg-[#ecdf96] dark:bg-[#00001c] p-4 mt-7 rounded-lg'>
-        <h2 className="text-2xl font-semibold mt-2">2. How We Use Your Information</h2>
-        <ul className="list-disc pt-5 pl-6 mb-4">
-            <li>To provide and maintain our services</li>
-            <li>To improve user experience</li>
-            <li>To personalize content and recommendations</li>
-            <li>To ensure security and prevent fraud</li>
-        </ul>
-      </div>
+          {/* Sections */}
+          {[
+            {
+              title: "Welcome to React Blog",
+              content:
+                "Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our platform. By accessing or using React Blog, you agree to the terms outlined in this policy.",
+            },
+            {
+              title: "Information We Collect",
+              content:
+                "We collect different types of information, including personal details (name, email), user-generated content (blog posts, comments, likes), technical data (IP, browser type), and usage analytics.",
+            },
+            {
+              title: "How We Use Your Information",
+              content:
+                "We use your data to provide and improve our services, personalize content, enhance security, respond to inquiries, and comply with legal requirements.",
+            },
+            {
+              title: "Sharing Your Information",
+              content:
+                "We do not sell or share your personal data. However, we may share anonymized, aggregated data with partners for platform improvements.",
+            },
+            {
+              title: "Security",
+              content:
+                "We implement strong security measures including encryption, access controls, and periodic security audits to protect user data.",
+            },
+            {
+              title: "Your Rights",
+              content:
+                "You have the right to access, update, or delete your personal information. Contact us for any privacy-related requests.",
+            },
+            {
+              title: "Changes to This Policy",
+              content:
+                "We may update this Privacy Policy from time to time. Any changes will be posted here, and we encourage users to review it periodically.",
+            },
+          ].map((section, index) => (
+            <div
+              key={index}
+              className=" dark:bg-[#1a2332] p-4 mt-7 rounded-lg"
+            >
+              <h2 className="text-2xl font-semibold text-blue-600 dark:text-yellow-400">
+                {index + 1}. {section.title}
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 pt-4">{section.content}</p>
+            </div>
+          ))}
 
-      <div className='bg-[#ecdf96] dark:bg-[#00001c] p-4 mt-7 rounded-lg'>
-        <h2 className="text-2xl font-semibold mt-2">3. Sharing Your Information</h2>
-        <p className="mb-4 pt-5">
-            We do not sell or share your personal data with third parties. However, we may share aggregated data
-            with partners to improve the platform.
-        </p>
+          {/* Contact Section */}
+          <section className="text-center mt-7">
+            <h2 className="text-2xl font-semibold text-blue-600 dark:text-yellow-400">
+              Contact Us
+            </h2>
+            <p className="text-gray-700 dark:text-gray-300">📧 support@reactblog.com</p>
+          </section>
+        </div>
       </div>
-
-      <div className='bg-[#ecdf96] dark:bg-[#00001c] p-4 mt-7 rounded-lg'>
-        <h2 className="text-2xl font-semibold mt-2">4. Security</h2>
-        <p className="mb-4 pt-5">
-            We take reasonable measures to protect your data from unauthorized access and breaches.
-        </p>
-      </div>
-
-      <div className='bg-[#ecdf96] dark:bg-[#00001c] p-4 mt-7 rounded-lg'>
-        <h2 className="text-2xl font-semibold mt-2">5. Your Rights</h2>
-        <p className="mb-4 pt-5">
-            You have the right to access, update, or delete your personal information. Contact us for any requests.
-        </p>
-      </div>
-
-      <div className='bg-[#ecdf96] dark:bg-[#00001c] p-4 mt-7 rounded-lg'>
-        <h2 className="text-2xl font-semibold mt-2">6. Changes to This Policy</h2>
-        <p className="mb-4 pt-5">
-        We may update this Privacy Policy from time to time. Please review it periodically for any changes.
-        </p>
-      </div>
-    </div>
     </div>
   );
-};
-
-export default PrivacyPolicy;
+}
