@@ -68,6 +68,14 @@ const userSchema = new Schema(
         achievements:[{
             type:mongoose.Schema.Types.ObjectId,
             ref:"Achievement"
+        }],
+        followers: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        }],
+        following: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
         }]
     },{timestamps: true}
 );

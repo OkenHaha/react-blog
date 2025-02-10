@@ -496,6 +496,57 @@ const getOtherUser = async (req, res) => {
   }
 };
 
+const followUser = async (req, res) => {
+    try {
+        const { userToFollowId } = req.params;
+        
+        // Get current user from token
+        const authHeader = req.headers.authorization;
+        if (!authHeader) {
+            return res.status(401).json({ error: "No token provided." });
+        }
+        const token = authHeader.split(' ')[1];
+        const decoded = jwt.verify(token, secretKey);
+        const currentUserId = decoded.userId;
 
+        // Check if trying to follow self
+        if (currentUserId === userToFollowId) {
+            return res.status(400).json({ error: "You cannot follow yourself" });
+        }
 
-export { getProfile, registerUser, loginUser, editProfile, deleteUserAccount, resetPassword, getOtherUser };
+        // Find both users
+        const userToFollow = await User.findById(userToFollowId);
+        const currentUser = await User.findById(currentUserId);
+
+        console.log("userToFollow",userToFollow)
+        console.log("currentUser",currentUser)
+
+        if (!userToFollow || !currentUser) {
+            return res.status(404).json({ error: "User not found" });
+        }
+
+        // Check if already following
+        if (currentUser.following.includes(userToFollowId)) {
+            return res.status(400).json({ error: "You are already following this user" });
+        }
+
+        // Add to following and followers lists
+        currentUser.following.push(userToFollowId);
+        userToFollow.followers.push(currentUserId);
+
+        await currentUser.save();
+        await userToFollow.save();
+
+        res.status(200).json({ 
+            message: "Successfully followed user",
+            following: currentUser.following,
+            followers: userToFollow.followers
+        });
+
+    } catch (error) {
+        console.error("Error in followUser:", error);
+        res.status(500).json({ error: "An error occurred while following user" });
+    }
+};
+
+export { getProfile, registerUser, loginUser, editProfile, deleteUserAccount, resetPassword, getOtherUser, followUser };
