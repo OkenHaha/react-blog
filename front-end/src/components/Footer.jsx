@@ -115,7 +115,7 @@ function Footer() {
                   <li>
                     <a
                       className="text-gray-700 transition hover:text-amber-400 dark:text-white dark:hover:text-white/75"
-                      href="#"
+                      href="mailto:reactblogswoc@gmail.com"
                     >
                       {" "}
                       reactblogswoc@gmail.com{" "}
