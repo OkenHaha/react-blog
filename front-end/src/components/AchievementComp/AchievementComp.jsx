@@ -13,7 +13,6 @@ const AchievementPage = () => {
     const fetchAchievements = async () => {
       try {
         const response = await axios.get("http://localhost:8080/api/achievement/getachievements");
-        console.log(response.data.fetchedAchievements);
         setAchievements(response.data.fetchedAchievements);
       } catch (err) {
         setError("Failed to load achievements");
@@ -29,52 +28,57 @@ const AchievementPage = () => {
   if (error) return <div className="text-center py-10 text-red-500">{error}</div>;
 
   return (
-    // <div className="max-w-4xl mt-20 p-6 transition-opacity duration-500 ease-in opacity-100">
-    <>
-    <div className="mb-28">.</div>
-    <h2 className="text-2xl font-semibold text-center mb-6">Achievements</h2>
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {achievements.map((achievement) => (
-        <motion.div
-          key={achievement._id}
-          className="bg-white p-4 shadow-lg rounded-lg flex justify-center items-center cursor-pointer"
-          whileHover={{ y: -10 }}
-          onClick={() => setSelectedAchievement(achievement)}
-        >
-          <img 
-            src={achievement.logo} 
-            alt={achievement.name} 
-            className="w-16 h-16 transition-transform duration-500 ease-in-out"
-          />
-        </motion.div>
-      ))}
-    </div>
-
-    {selectedAchievement && (
-      <Dialog open={true} onClose={() => setSelectedAchievement(null)} className="fixed inset-0 flex items-center justify-center z-50">
-        <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full flex flex-col items-center">
-          <motion.img 
-            src={selectedAchievement.logo} 
-            alt={selectedAchievement.name} 
-            className="w-24 h-24 mb-4" 
-            animate={{ rotate: 360 }} 
-            transition={{ duration: 1, repeat: 1 }}
-          />
-          <Dialog.Title className="text-xl font-bold">{selectedAchievement.name}</Dialog.Title>
-          <p className="text-gray-500 mt-2">Achieved on: {new Date(selectedAchievement.achevedOn).toLocaleDateString()}</p>
-          <p className="mt-4 text-center">{selectedAchievement.description}</p>
-          <button 
-            onClick={() => setSelectedAchievement(null)} 
-            className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+    <div className="min-h-screen bg-gradient-to-b from-purple-200 to-purple-100 p-10 flex flex-col items-center">
+      <div className="mt-16"></div>
+      <h2 className="text-4xl font-bold text-center text-purple-800 mb-10">Achievements</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
+        {achievements.map((achievement) => (
+          <motion.div
+            key={achievement._id}
+            className="bg-white p-6 shadow-lg rounded-lg flex flex-col items-center cursor-pointer border border-purple-300 hover:shadow-purple-400 hover:shadow-md"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1, boxShadow: "0px 0px 15px rgba(128, 0, 128, 0.5)" }}
+            transition={{ duration: 0.6 }}
+            whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(128, 0, 255, 0.8)" }}
+            onClick={() => setSelectedAchievement(achievement)}
           >
-            Close
-          </button>
-        </div>
-      </Dialog>
-    )}
-    
-    </>
-    // </div>
+            <motion.img 
+              src={achievement.image} 
+              alt={achievement.name} 
+              className="w-24 h-24 mb-4" 
+              animate={{ scaleX: [1, -1, 1] }} 
+              transition={{ duration: 0.6, repeat: 1 }}
+            />
+            <h3 className="text-lg font-semibold text-purple-700 text-center">{achievement.name}</h3>
+            <p className="text-gray-500 text-sm">{new Date(achievement.achevedOn).toLocaleDateString()}</p>
+            <p className="mt-3 text-gray-700 text-center">{achievement.description}</p>
+          </motion.div>
+        ))}
+      </div>
+
+      {selectedAchievement && (
+        <Dialog open={true} onClose={() => setSelectedAchievement(null)} className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full flex flex-col items-center">
+            <motion.img 
+              src={selectedAchievement.image} 
+              alt={selectedAchievement.name} 
+              className="w-24 h-24 mb-4" 
+              animate={{ scaleX: [1, -1, 1] }} 
+              transition={{ duration: 0.6, repeat: 1 }}
+            />
+            <Dialog.Title className="text-xl font-bold text-purple-700">{selectedAchievement.name}</Dialog.Title>
+            <p className="text-gray-500 mt-2">Achieved on: {new Date(selectedAchievement.achevedOn).toLocaleDateString()}</p>
+            <p className="mt-4 text-center text-gray-700">{selectedAchievement.description}</p>
+            <button 
+              onClick={() => setSelectedAchievement(null)} 
+              className="mt-4 bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600"
+            >
+              Close
+            </button>
+          </div>
+        </Dialog>
+      )}
+    </div>
   );
 };
 

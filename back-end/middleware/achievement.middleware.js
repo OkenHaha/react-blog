@@ -44,10 +44,19 @@ const Check_add_achievement_generic = (achievementName, userField, requiredCount
                 console.log(fetched_user[userField].length)
                 if (fetched_user[userField].length >= requiredCount) {
                     console.log("enterde inner ")
+                    let imageLink;
+                    if (achievementName == "Blogger") {
+                        imageLink = "https://res.cloudinary.com/djfhwhtyy/image/upload/v1739444575/r2l5abcbzeaxvxlt4bmq.png"
+                    }else if(achievementName == "Commenter"){
+                        imageLink = "https://res.cloudinary.com/djfhwhtyy/image/upload/v1739444575/xabqfgt1ttwq1iuipob9.png"
+                    }else if (achievementName == "Reactor") {
+                        imageLink= "https://res.cloudinary.com/djfhwhtyy/image/upload/v1739444575/hgzwiazf2pxcytpgdyue.png"
+                    }
                     const new_achievement = new Achievement({
                         name: achievementName,
                         user: fetched_user._id,
                         achievedOn: Date.now(),
+                        image: imageLink
                     });
 
                     await new_achievement.save();

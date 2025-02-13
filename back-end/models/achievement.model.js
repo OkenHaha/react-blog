@@ -10,6 +10,9 @@ const achievementSchema = new mongoose.Schema({
         ref: "User",
         required: true
     },
+    image:{
+        type: String
+    },
     achevedOn: { 
         type: Date, 
         default: Date.now 
