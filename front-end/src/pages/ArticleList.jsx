@@ -390,8 +390,10 @@ const ArticleList = () => {
                         {article.title}
                       </h3>
 
-                      <Markdown className="text-gray-600 dark:text-gray-300  h-20 mb-8 line-clamp-3">
-                        {article.content || 'No description available.'}
+                      <Markdown className="text-gray-600 dark:text-gray-300 h-20 mb-8 line-clamp-3">
+                        {article.content 
+                          ? `${article.content.substring(0, 300)}${article.content.length > 300 ? '...' : ''}`
+                          : 'No description available.'}
                       </Markdown>
 
                       {/* Read More Button with Advanced Animation */}

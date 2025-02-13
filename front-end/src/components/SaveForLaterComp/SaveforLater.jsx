@@ -63,7 +63,11 @@ const SaveForLaterArticleList = () => {
               whileHover={{ scale: 1.05 }}
             />
             <h3 className="text-blue-600 text-lg font-semibold mb-2">{article.title}</h3>
-            <p className="text-black truncate">{article.content.length > 100 ? article.content.substring(0, 100) + "..." : article.content}</p>
+            <p className="text-black truncate">
+              {article.content.length > 300 
+                ? article.content.substring(0, 300) + '...' 
+                : article.content}
+            </p>
             <motion.div
               className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-full cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity"
               onClick={() => removeArticle(article._id)}

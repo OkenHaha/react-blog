@@ -33,7 +33,9 @@ const Articles = ({ articles }) => {
               className="overflow-y-auto max-h-24 pr-2"
               style={{ scrollbarWidth: 'thin' }}
             >
-              {article.content || 'No content available.'}
+              {article.content 
+                ? `${article.content.substring(0, 300)}${article.content.length > 300 ? '...' : ''}`
+                : 'No content available.'}
             </p>
           </div>
 
