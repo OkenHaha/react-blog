@@ -124,7 +124,6 @@ const ArticleList = () => {
 
   // Sorting and Filtering Logic (keep existing methods)
   const sortArticles = (articles, sortOrder) => {
-    // Existing sorting logic
     return [...articles].sort((a, b) => {
       switch (sortOrder) {
         case 'most-liked':
@@ -133,10 +132,37 @@ const ArticleList = () => {
           return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
         case 'oldest':
           return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+        case 'more than 500 words':
+          return getWordCount(b.content) - getWordCount(a.content);
+        case 'less than 500 words':
+          return getWordCount(a.content) - getWordCount(b.content);
+        case 'more than 1000 words':
+          return getWordCount(b.content) - getWordCount(a.content);
+        case 'less than 1000 words':
+          return getWordCount(a.content) - getWordCount(b.content);
         default:
           return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
       }
+    }).filter(article => {
+      switch (sortOrder) {
+        case 'more than 500 words':
+          return getWordCount(article.content) > 500;
+        case 'less than 500 words':
+          return getWordCount(article.content) <= 500;
+        case 'more than 1000 words':
+          return getWordCount(article.content) > 1000;
+        case 'less than 1000 words':
+          return getWordCount(article.content) <= 1000;
+        default:
+          return true;
+      }
     });
+  };
+
+  // Add this helper function right after sortArticles
+  const getWordCount = (content) => {
+    if (!content) return 0;
+    return content.trim().split(/\s+/).length;
   };
 
   // Handler Methods (keep existing implementations)
@@ -173,13 +199,20 @@ const ArticleList = () => {
     // setArticles(resp.data.articles)
   }
 
-  
-
-
   const handleTagClick = async (tag) => {
     try {
-      const resp = await axios.post(`${url}/api/article/getarticlebytag`, { tag });
-      setArticles(resp.data.articles || []);
+      if (tag === 'Others') {
+        // Fetch all articles and filter for uncategorized ones
+        const response = await axios.get(`${url}/api/article/getallarticle`);
+        const allArticles = response.data.articles;
+        const uncategorizedArticles = allArticles.filter(article => 
+          !article.tag || article.tag === '' || article.tag === 'Uncategorized'
+        );
+        setArticles(uncategorizedArticles);
+      } else {
+        const resp = await axios.post(`${url}/api/article/getarticlebytag`, { tag });
+        setArticles(resp.data.articles || []);
+      }
     } catch (error) {
       console.error('Error fetching articles by tag', error);
     }
@@ -274,20 +307,21 @@ const ArticleList = () => {
               className="px-4 py-3 rounded-xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200 dark:border-gray-700"
             >
              <option value="Tech">Technology</option>
-          <option value="Music">Music</option>
-          <option value="Game">Gaming</option>
-          <option value="Movies">Movies</option>
-          <option value="Books">Books</option>
-          <option value="Food">Food</option>
-          <option value="Travel">Travel</option>
-          <option value="Fashion">Fashion</option>
-          <option value="Health">Health</option>
-          <option value="Sports">Sports</option>
-          <option value="Sci-Fi">Sci-Fi</option>
-          <option value="Finance">Finance</option>
-          <option value="Politics">Politics</option>
-          <option value="Narratives">Narratives</option>
-          <option value="Trending-Topics">Trending-Topics</option>
+             <option value="Music">Music</option>
+             <option value="Game">Gaming</option>
+             <option value="Movies">Movies</option>
+             <option value="Books">Books</option>
+             <option value="Food">Food</option>
+             <option value="Travel">Travel</option>
+             <option value="Fashion">Fashion</option>
+             <option value="Health">Health</option>
+             <option value="Sports">Sports</option>
+             <option value="Sci-Fi">Sci-Fi</option>
+             <option value="Finance">Finance</option>
+             <option value="Politics">Politics</option>
+             <option value="Narratives">Narratives</option>
+             <option value="Trending-Topics">Trending-Topics</option>
+             <option value="Others">Others</option>
             </select>
 
             <select

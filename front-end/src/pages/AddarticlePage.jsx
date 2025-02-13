@@ -265,6 +265,7 @@ const AddArticlePage = () => {
                                     <option value="Politics">Politics</option>
                                     <option value="Narratives">Narratives</option>
                                     <option value="Trending-Topics">Trending-Topics</option>
+                                    <option value="Others">Others</option>
                                 </select>
                             </div>
                         </div>
