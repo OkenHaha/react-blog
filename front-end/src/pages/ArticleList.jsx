@@ -6,6 +6,7 @@ import { link } from '../components/Baselink';
 import LikeButton from '../components/LikeButton';
 import NoarticleImage from '../assets/noarticle.png';
 import { useSelector } from 'react-redux';
+import TidioChat from "../components/Tidio";
 
 const ArticleList = () => {
   const [articles, setArticles] = useState([]);
@@ -268,6 +269,8 @@ const ArticleList = () => {
   );
 
   return (
+    <>
+    <TidioChat/>
     <motion.div 
       initial="initial"
       animate="in"
@@ -480,6 +483,7 @@ const ArticleList = () => {
         )}
       </div>
     </motion.div>
+    </>
   );
 };
 

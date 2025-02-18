@@ -9,6 +9,9 @@ import { BiLoaderAlt } from "react-icons/bi";
 import { motion, AnimatePresence } from 'framer-motion';
 import Markdown from 'react-markdown';
 import LikeButton from '../components/LikeButton';
+import TidioChat from "../components/Tidio";
+
+
 const PublicProfile = () => {
     const { userId } = useParams();
     const { user: currentUser } = useSelector((state) => state.auth);
@@ -114,6 +117,8 @@ const PublicProfile = () => {
     if (!user) return <div className="text-center mt-4">User not found</div>;
 
     return (
+        <>
+        <TidioChat/>
         <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 pt-16 pb-12">
             <div className="container mx-auto px-4 max-w-4xl">
                 {/* Show follow error if exists */}
@@ -439,6 +444,7 @@ const PublicProfile = () => {
                 )}
             </div>
         </div>
+        </>
     );
 };
 

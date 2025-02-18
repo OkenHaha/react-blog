@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import TidioChat from "../components/Tidio";
+
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -36,6 +38,8 @@ const FAQ = () => {
   ];
 
   return (
+    <>
+    <TidioChat/>
     <div className="max-w-5xl mx-auto p-10 pt-20 dark:bg-gray-900 rounded-lg">
       <h1 className="text-5xl font-bold text-center mb-10 mt-12">
         Frequently Asked Questions
@@ -78,6 +82,7 @@ const FAQ = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 
