@@ -329,7 +329,7 @@ const getAllArticles = async (req, res) => {
 
         const totalArticles = await Article.countDocuments();
         const totalPages = Math.ceil(totalArticles / limit);
-        
+
         const articles = await Article.find()
             .sort({ createdAt: -1 })
             .skip(skip)
@@ -802,7 +802,7 @@ const getsaveforlater = async (req, res) => {
 const removeSaveforLater = async (req, res) => {
     // Validate Authorization Header
     const authHeader = req.headers.authorization;
-    const {id}= req.body 
+    const { id } = req.body
     if (!authHeader) {
         return res.status(401).json({ error: "No token provided." });
     }
@@ -821,10 +821,10 @@ const removeSaveforLater = async (req, res) => {
         return res.status(404).json({ error: "User not found." });
     }
 
-    if(user.saveForLater.includes(id)){
+    if (user.saveForLater.includes(id)) {
         const index = user.saveForLater.indexOf(id)
         if (index > -1) {
-            user.saveForLater.splice(index,1)
+            user.saveForLater.splice(index, 1)
         }
     }
 
@@ -836,7 +836,7 @@ const removeSaveforLater = async (req, res) => {
 const recentComments = async (req, res) => {
     try {
         const { id } = req.params;
-        
+
         // Validate ID
         if (!id) {
             return res.status(400).json({ error: "Invalid user ID provided or not provided" });
@@ -855,7 +855,7 @@ const recentComments = async (req, res) => {
 
         console.log(`Fetched ${fetchedComments.length} comments`);
 
-        
+
 
         return res.status(200).send({
             message: "Comments fetched successfully",
@@ -910,7 +910,7 @@ const categoryMap = async (req, res) => {
     }
 };
 
-const monthToArticleMap= async (req, res) => {
+const monthToArticleMap = async (req, res) => {
     try {
         const { authorId } = req.params;
 
@@ -952,7 +952,7 @@ const monthToArticleMap= async (req, res) => {
             const monthArticles = articles.filter(article => {
                 const articleDate = new Date(article.createdAt);
                 return articleDate.getMonth() === month.getMonth() &&
-                       articleDate.getFullYear() === month.getFullYear();
+                    articleDate.getFullYear() === month.getFullYear();
             });
 
             // Compute statistics
@@ -977,6 +977,128 @@ const monthToArticleMap= async (req, res) => {
     }
 };
 
+const addReaction = async (req, res) => {
+    try {
+        const { articleId } = req.params;
+        const { emoji } = req.body;
+        const authHeader = req.headers.authorization;
+        if (!authHeader) {
+            return res.status(401).json({ error: "No token provided. User should be logged in to react to an article" });
+        }
+
+        // Validate emoji
+        const validEmojis = ['👍', '❤️', '😂', '😮', '😢', '😡'];
+        if (!validEmojis.includes(emoji)) {
+            return res.status(400).json({ error: "Invalid emoji reaction" });
+        }
+
+        // Get user from token
+
+        const token = authHeader.split(' ')[1];
+        const decoded = jwt.verify(token, secretKey);
+        const userId = decoded.userId;
+
+        // Find article
+        const article = await Article.findById(articleId);
+        if (!article) {
+            return res.status(404).json({ error: "Article not found" });
+        }
+
+        // Check if user already reacted
+        const existingReaction = article.reactions.find(
+            reaction => reaction.user.toString() === userId
+        );
+
+        if (existingReaction) {
+            // Update existing reaction
+            existingReaction.emoji = emoji;
+        } else {
+            // Add new reaction
+            article.reactions.push({ emoji, user: userId });
+        }
+
+        await article.save();
+
+        // Get updated reaction counts
+        const reactionCounts = article.getReactionCounts();
+
+        res.status(200).json({
+            message: "Reaction added successfully",
+            reactions: reactionCounts
+        });
+
+    } catch (error) {
+        console.error("Error adding reaction:", error);
+        res.status(500).json({ error: "An error occurred while adding reaction" });
+    }
+};
+
+const removeReaction = async (req, res) => {
+    try {
+        const { articleId } = req.params;
+
+        // Get user from token
+        const authHeader = req.headers.authorization;
+        if (!authHeader) {
+            return res.status(401).json({ error: "No token provided." });
+        }
+
+        const token = authHeader.split(' ')[1];
+        const decoded = jwt.verify(token, secretKey);
+        const userId = decoded.userId;
+
+        // Find article
+        const article = await Article.findById(articleId);
+        if (!article) {
+            return res.status(404).json({ error: "Article not found" });
+        }
+
+        // Remove reaction
+        article.reactions = article.reactions.filter(
+            reaction => reaction.user.toString() !== userId
+        );
+
+        await article.save();
+
+        // Get updated reaction counts
+        const reactionCounts = article.getReactionCounts();
+
+        res.status(200).json({
+            message: "Reaction removed successfully",
+            reactions: reactionCounts
+        });
+
+    } catch (error) {
+        console.error("Error removing reaction:", error);
+        res.status(500).json({ error: "An error occurred while removing reaction" });
+    }
+};
+
+const getReactions = async (req, res) => {
+    try {
+        const { articleId } = req.params;
+
+        // Find article
+        const article = await Article.findById(articleId)
+            .populate('reactions.user', 'username picture');
+
+        if (!article) {
+            return res.status(404).json({ error: "Article not found" });
+        }
+
+        // Get reaction counts
+        const reactionCounts = article.getReactionCounts();
+
+        res.status(200).json({
+            reactions: article.reactions,
+            reactionCounts
+        });
+
+    } catch (error) {
+        console.error("Error fetching reactions:", error);
+        res.status(500).json({ error: "An error occurred while fetching reactions" });
+    }
+};
 
 export {
     addArticle,
@@ -996,5 +1118,8 @@ export {
     categoryMap,
     monthToArticleMap,
     removeSaveforLater,
-    recentComments
+    recentComments,
+    addReaction,
+    removeReaction,
+    getReactions
 }
