@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Heart, Users, Sparkles, BookOpen, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -219,10 +220,12 @@ const About = () => {
           <p className="text-xl mb-8 opacity-90">
             Join our community of writers and readers today.
           </p>
-          <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold flex items-center gap-2 mx-auto hover:bg-blue-50 transition-colors duration-300">
-            Get Started
-            <ArrowRight className="w-5 h-5" />
-          </button>
+          <Link to="/#how-to-get-started">
+            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold flex items-center gap-2 mx-auto hover:bg-blue-50 transition-colors duration-300">
+              Get Started
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </Link>
         </div>
       </div>
     </div>
