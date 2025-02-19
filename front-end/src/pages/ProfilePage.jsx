@@ -17,6 +17,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Markdown from 'react-markdown';
 import LikeButton from '../components/LikeButton';
 
+const dummyFollowing = [
+  { id: 1, name: "User 1", image: "https://via.placeholder.com/50" },
+  { id: 2, name: "User 2", image: "https://via.placeholder.com/50" },
+  { id: 3, name: "User 2", image: "https://via.placeholder.com/50" },
+  { id: 4, name: "User 3", image: "https://via.placeholder.com/50" },
+  { id: 5, name: "User 4", image: "https://via.placeholder.com/50" }
+];
+
+
 const ProfilePage = () => {
   const [user, setUser] = useState({});
   const [userArticles, setUserArticles] = useState([]);
@@ -232,6 +241,50 @@ const ProfilePage = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="bg-white mt-10 dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 p-6">
+              <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-6 flex items-center gap-2">
+                <ChartBarIcon className="w-5 h-5 text-indigo-600" />
+                You Following:
+              </h3>
+    <motion.div 
+      className="space-y-4 p-4 bg-white shadow-md rounded-lg"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
+      <h2 className="text-lg font-semibold text-blue-600">You are following:</h2>
+
+      {user.following && user.following.length > 0 ? (
+        <motion.ul className="space-y-2">
+          {user.following.map((followedUser) => (
+            <motion.li
+              key={followedUser.id}
+              className="flex items-center space-x-3 p-3 border rounded-lg hover:bg-gray-100 transition duration-200"
+              whileHover={{ scale: 1.05 }}
+            >
+              <img src={followedUser.image} alt={followedUser.name} className="w-12 h-12 rounded-full border-2 border-blue-500" />
+              <span className="font-medium text-gray-800">{followedUser.name}</span>
+            </motion.li>
+          ))}
+        </motion.ul>
+      ) : (
+        <motion.ul className="space-y-2 text-gray-500">
+          {dummyFollowing.map((user) => (
+            <motion.li
+              key={user.id}
+              className="flex items-center space-x-3 p-3 border rounded-lg hover:bg-gray-100 transition duration-200"
+              whileHover={{ scale: 1.05 }}
+            >
+              <img src={user.image} alt={user.name} className="w-12 h-12 rounded-full border-2 border-gray-400" />
+              <span className="font-medium text-gray-700">{user.name}</span>
+            </motion.li>
+          ))}
+        </motion.ul>
+      )}
+    </motion.div>
+
+
         </div>
 
         {/* Additional Sections */}

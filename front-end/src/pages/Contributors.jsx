@@ -4,6 +4,7 @@ import { getContributors } from "../components/contributors/contribution.js";
 import { useWindowSize } from "react-use";
 import Confetti from "react-confetti";
 import { XCircle } from "lucide-react"; // Import icon for close button
+import TidioChat from "../components/Tidio";
 
 const Contributors = () => {
   const [data, setData] = useState([]);
@@ -31,6 +32,8 @@ const Contributors = () => {
   };
 
   return (
+    <>
+    <TidioChat/>
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-900 dark:to-gray-800 relative pt-14">
       {showConfetti && (
         <Confetti width={width} height={height} recycle={false} numberOfPieces={200} colors={["#3b82f6", "#1d4ed8", "#FFB800", "#2563eb"]} />
@@ -103,6 +106,7 @@ const Contributors = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

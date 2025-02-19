@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { Heart, Users, Sparkles, BookOpen, ArrowRight } from "lucide-react";
+
 import { Link } from "react-router-dom";
+
+import TidioChat from "../components/Tidio";
+
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -63,6 +67,8 @@ const About = () => {
   };
 
   return (
+    <>
+    <TidioChat/>
     <div className="min-h-screen bg-gradient-to-b from-white via-blue-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
@@ -229,6 +235,7 @@ const About = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
