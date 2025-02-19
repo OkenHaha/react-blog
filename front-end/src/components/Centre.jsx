@@ -191,7 +191,7 @@ function Centre() {
         </div>
       </section>
 
-      <section className="relative py-16 overflow-hidden">
+      <section id="how-to-get-started" className="relative py-16 overflow-hidden">
         <div className="relative container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2
