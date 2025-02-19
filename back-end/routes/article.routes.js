@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getarticles, addcomments,addArticle, getAllArticles, editArticle, getarticlebyid, deleteArticle, getarticlesbyuser, likeArticle, getArticleByTag, saveforlater, saveasdraft, getUserDrafts, getsaveforlater, removeSaveforLater, recentComments } from "../controllers/article.controller.js";
+import { getarticles, addcomments,addArticle, getAllArticles, editArticle, getarticlebyid, deleteArticle, getarticlesbyuser, likeArticle, getArticleByTag, saveforlater, saveasdraft, getUserDrafts, getsaveforlater, removeSaveforLater, recentComments, addReaction, removeReaction, getReactions } from "../controllers/article.controller.js";
 import multer from 'multer'
 import { upload_on_cloudinary } from "../utils/cloudinary.js";
 import { Check_add_achievement, Check_add_achievement_comments, Check_add_achievement_liked } from "../middleware/achievement.middleware.js";
@@ -56,5 +56,10 @@ articleRouter.post('/removeSavedArticle', removeSaveforLater)
 
 //get recent comments
 articleRouter.get('/getrecentomment/:id', recentComments)
+
+// Add reaction routes
+articleRouter.post('/react/:articleId', addReaction);
+articleRouter.delete('/react/:articleId', removeReaction);
+articleRouter.get('/reactions/:articleId', getReactions);
 
 export { articleRouter };
