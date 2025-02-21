@@ -50,7 +50,24 @@ function Footer() {
             </ul>
           </div>
 
-          
+          {/* Contact Section */}
+          <div className="space-y-6">
+            <h3 className="text-lg dark:text-gray-200 font-bold">Contact Info</h3>
+            <ul className="space-y-4">
+              <li className="flex items-center justify-center md:justify-start space-x-3 text-gray-600 dark:text-gray-400">
+                <MapPin className="w-5 h-5 text-blue-500 dark:text-blue-400" />
+                <span>123 Rosario, Argentina</span>
+              </li>
+              <li className="flex items-center justify-center md:justify-start space-x-3 text-gray-600 dark:text-gray-400">
+                <Phone className="w-5 h-5 text-blue-500 dark:text-blue-400" />
+                <span>+91 1234567890</span>
+              </li>
+              <li className="flex items-center justify-center md:justify-start space-x-3 text-gray-600 dark:text-gray-400">
+                <Mail className="w-5 h-5 text-blue-500 dark:text-blue-400" />
+                <span><a href="mailto:reactblogswoc@gmail.com" className="hover:underline">reactblogswoc@gmail.com</a></span>
+              </li>
+            </ul>
+          </div>
         </div>
 
         
