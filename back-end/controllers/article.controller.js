@@ -3,6 +3,7 @@ import { Article, Comment } from '../models/article.model.js';
 import { User } from '../models/user.model.js';
 import { upload_on_cloudinary } from '../utils/cloudinary.js';
 import { Level } from '../models/level.model.js';
+import { updateStreak } from './streak.controller.js';
 
 const secretKey = process.env.SECRET_KEY;
 
@@ -163,6 +164,7 @@ const addArticle = async (req, res) => {
 
         await newArticle.save();
 
+        await updateStreak(userId);
         // Increment the user's article count
         user.articlesPublished += 1;
 
