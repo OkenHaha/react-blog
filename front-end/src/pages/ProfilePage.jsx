@@ -36,6 +36,15 @@ const ProfilePage = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const dispatch = useDispatch();
 
+  const[streak, setStreak] = useState(0);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+
+
+  }, [])
+  
+
   useEffect(() => {
     const token = localStorage.getItem('token');
     axios
@@ -54,6 +63,21 @@ const ProfilePage = () => {
           .then(response => {
             console.log(response.data.articleDetails);
             setUserArticles(response.data.articleDetails);
+            axios
+            .get(url + '/api/auth/streak', {
+              headers: {
+                Authorization: token,
+              },
+            })
+            .then(response => {
+              // console.log(response.data);
+              setStreak(response.data.streak);
+
+            })
+            .catch(error => {
+              console.error(error);
+            });
+        
           });
       })
       .catch(error => {
@@ -212,6 +236,11 @@ const ProfilePage = () => {
                 <DetailItem 
                   label="Date of Birth" 
                   value={user.dob ? new Date(user.dob).toLocaleDateString('en-GB') : "Not specified"}
+                  className="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg"
+                />
+                <DetailItem 
+                  label="Current Strak" 
+                  value={streak ? streak.streak : "Strat Writing Articles..."}
                   className="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg"
                 />
               </div>
