@@ -50,33 +50,35 @@ function Footer() {
 
           {/* Quick Links Section */}
           <div className="space-y-6">
-            <h3 className="text-lg dark:text-gray-200 font-bold">Links</h3>
-            <ul className="space-y-4">
-              {['About Us', 'Home', 'Article'].map((item) => (
-                <li key={item}>
-                  <Link to={`/${item.toLowerCase().replace(' ', '-')}`} className="group dark:hover:text-gray-200 dark:text-gray-400 flex items-center text-gray-600 hover:text-gray-900">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <h3 className="text-lg dark:text-gray-200 font-bold">Links</h3>
+          <ul className="space-y-4">
+         {['About', 'Home', 'Article'].map((item) => (
+          <li key={item}>
+          <Link to={`/${item.toLowerCase().replace(/\s+/g, '-')}`} className="group dark:hover:text-gray-200 dark:text-gray-400 flex items-center text-gray-600 hover:text-gray-900">
+          <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+          {item}
+         </Link>
+         </li>
+         ))}
+         </ul>
+       </div>
+
 
           {/* Support Section */}
           <div className="space-y-6">
             <h3 className="text-lg dark:text-gray-200 font-bold">Support</h3>
             <ul className="space-y-4">
-              {['FAQ', 'Contributor', 'Privacy Policy'].map((item) => (
-                <li key={item}>
-                  <Link to={`/${item.toLowerCase().replace(' ', '-')}`} className="group flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {['FAQ', 'Contributor', 'Privacy Policy'].map((item) => (
+            <li key={item}>
+            <Link to={`/${item.toLowerCase().replace(/\s+/g, '-')}`} className="group flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200">
+           <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+           {item}
+           </Link>
+           </li>
+           ))}
+           </ul>
           </div>
+
 
           {/* Contact Section */}
           <div className="space-y-6">
