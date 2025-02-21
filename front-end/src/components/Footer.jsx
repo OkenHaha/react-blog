@@ -70,7 +70,19 @@ function Footer() {
           </div>
         </div>
 
-        
+        {/* Divider with Animation */}
+        <div className="relative mt-2">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-gray-700 dark:border-gray-400"></div>
+          </div>
+        </div>
+
+        {/* Copyright Section */}
+        <div className="mt-5">
+          <p className="text-center text-gray-900 dark:text-gray-400">
+            © Copyright {new Date().getFullYear()}. All Rights Reserved by React-Blog.
+          </p>
+        </div>
       </div>
     </footer>
   );
