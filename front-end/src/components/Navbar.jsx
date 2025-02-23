@@ -10,6 +10,9 @@ import { HiHome, HiInformationCircle, HiNewspaper, HiUser, HiMenu, HiX } from 'r
 import { LuSearch } from "react-icons/lu";
 import { login as authLogin, logout as authLogout } from "../store/authSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { FaBookBookmark } from "react-icons/fa6";
+import {AnimatePresence} from "framer-motion";
+import { motion } from "framer-motion";
 
 const Navbar = ({ theme, toggleTheme }) => {
   axios.interceptors.request.use(
@@ -24,7 +27,8 @@ const Navbar = ({ theme, toggleTheme }) => {
   );
 
   const url = `${link}`;
-  const [loginCredential, setLoginCredential] = useState(useSelector((state) => state.auth.user));
+  const authUser = useSelector((state) => state.auth.user);
+  const [loginCredential, setLoginCredential] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -36,7 +40,6 @@ const Navbar = ({ theme, toggleTheme }) => {
   const [open, setOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
   const isLoggedIn = useSelector((state) => state.auth.authStatus);
-  const [user, setUser] = useState("");
   const [toggle, setToggle] = useState(false);
   const [otp, setOtp] = useState('');
   const [showOtpInput, setShowOtpInput] = useState(false);
@@ -148,7 +151,25 @@ const Navbar = ({ theme, toggleTheme }) => {
     }
   };
 
+  const getYesterdayDate = () => {
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    return yesterday.toISOString().split('T')[0];
+  };
+
   const validateRegistration = () => {
+    
+    if (dob) {
+      const selectedDate = new Date(dob);
+      const yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
+      
+      if (selectedDate > yesterday) {
+        setError('Date of birth cannot be later than yesterday');
+        return false;
+      }
+    }
+
     // Enhanced password validation
     if (!password) {
       setError('Password is required');
@@ -233,6 +254,12 @@ const Navbar = ({ theme, toggleTheme }) => {
     }
   }, []);
 
+  useEffect(() => {
+    if (authUser) {
+      setLoginCredential(authUser.username || "");
+    }
+  }, [authUser]);
+
   const logout = () => {
     localStorage.removeItem("token");
     dispatch(authLogout())
@@ -297,7 +324,18 @@ const Navbar = ({ theme, toggleTheme }) => {
                 <span>Articles</span>
                 <div className={getUnderlineClass('/article-list')} />
               </Link>
+              
+              {
+                isLoggedIn ? (""):(
 
+                  <Link to={'/savedArticles'}>
+                    <div className="flex flex-row gap-3 justify-center items-center">
+                      <FaBookBookmark size={15} color="gray"/>
+                      <span> Saved For Later Articles</span>
+                    </div>
+                  </Link>
+                )
+              }
 
               <div className="flex items-center space-x-4">
                 {isLoggedIn ? (
@@ -311,7 +349,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                         }`}
                     >
                       <HiUser className="w-5 h-5" />
-                      <span>{loginCredential}</span>
+                      <span>{authUser?.username || ""}</span>
                     </button>
                     <button
                       onClick={logout}
@@ -396,7 +434,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                   className={`w-full text-left ${linkClass}`}
                 >
                   <HiUser className="w-5 h-5 mr-2" />
-                  <span>{loginCredential}</span>
+                  <span>{authUser?.username || ""}</span>
                 </button>
                 <button
                   onClick={logout}
@@ -439,137 +477,221 @@ const Navbar = ({ theme, toggleTheme }) => {
         </div>
       </nav>
       {open && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
-          <div className={`relative w-full max-w-sm p-8 rounded-lg shadow-2xl ${theme === 'dark' ? 'bg-gray-900 text-slate-100' : 'bg-slate-200'}`}>
-            <button
-              onClick={handleClose}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-900 text-2xl font-bold"
-            >
-              &times;
-            </button>
-            <div className="text-center mb-6">
-              <h2 className={`text-3xl font-extrabold ${theme === 'dark' ? 'text-white' : ''}`}>
-                {isLogin ? 'Login' : 'Register'}
-              </h2>
-              <p className={`text-sm mt-2 ${theme === 'dark' ? 'text-white' : ''}`}>
-                {isLogin ? "Welcome back! Please login to your account." : "Create your account to get started."}
-              </p>
-            </div>
-            <form onSubmit={isLogin ? login : register} className="flex flex-col gap-4">
-              <input
-                type="text"
-                value={loginCredential}
-                onChange={(event) => setLoginCredential(event.target.value)}
-                placeholder={isLogin ? "Email or Username" : "Username"}
-                required
-                className={`w-full p-3 rounded-lg border ${loginCredential ? 'border-green-500' : 'border-gray-300'} focus:ring-2 focus:ring-green-500 focus:outline-none ${theme === 'dark' ? 'bg-gray-700 text-white' : 'text-gray-700'}`}
-              />
-              {!isLogin && (
-                <>
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(event) => setEmail(event.target.value)}
-                    placeholder="Email"
-                    required
-                    className={`w-full p-3 rounded-lg border ${email ? 'border-green-500' : 'border-gray-300'} focus:ring-2 focus:ring-green-500 focus:outline-none ${theme === 'dark' ? 'bg-gray-700 text-white' : 'text-gray-700'}`}
-                  />
-                  <input
-                    type="text"
-                    value={name}
-                    onChange={(event) => setName(event.target.value)}
-                    placeholder="Full Name"
-                    required
-                    className={`w-full p-3 rounded-lg border ${name ? 'border-green-500' : 'border-gray-300'} focus:ring-2 focus:ring-green-500 focus:outline-none ${theme === 'dark' ? 'bg-gray-700 text-white' : 'text-gray-700'}`}
-                  />
-                  <input
-                    type="text"
-                    value={location}
-                    onChange={(event) => setLocation(event.target.value)}
-                    placeholder="Location (Optional)"
-                    className={`w-full p-3 rounded-lg border ${location ? 'border-green-500' : 'border-gray-300'} focus:ring-2 focus:ring-green-500 focus:outline-none ${theme === 'dark' ? 'bg-gray-700 text-white' : 'text-gray-700'}`}
-                  />
-                  <input
-                    type="text"
-                    value={picture}
-                    onChange={(event) => setPicture(event.target.value)}
-                    placeholder="Profile Picture URL (Optional)"
-                    className={`w-full p-3 rounded-lg border ${picture ? 'border-green-500' : 'border-gray-300'} focus:ring-2 focus:ring-green-500 focus:outline-none ${theme === 'dark' ? 'bg-gray-700 text-white' : 'text-gray-700'}`}
-                  />
-                  <input
-                    type="date"
-                    value={dob}
-                    onChange={(event) => setDob(event.target.value)}
-                    className={`w-full p-3 rounded-lg border ${dob ? 'border-green-500' : 'border-gray-300'} focus:ring-2 focus:ring-green-500 focus:outline-none ${theme === 'dark' ? 'bg-gray-700 text-white' : 'text-gray-700'}`}
-                  />
-                </>
-              )}
-              <input
-                type="password"
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
-                placeholder="Password"
-                required
-                className={`w-full p-3 rounded-lg border ${password ? 'border-green-500' : 'border-gray-300'} focus:ring-2 focus:ring-green-500 focus:outline-none ${theme === 'dark' ? 'bg-gray-700 text-white' : 'text-gray-700'}`}
-              />
-              {error && (
-                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
-                  <span className="block sm:inline">{error}</span>
-                </div>
-              )}
-              {!isLogin && !showOtpInput && (
-                <button
-                  type="button"
-                  onClick={handleGenerateOtp}
-                  className="w-full py-3 bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-bold rounded-lg transition-transform transform hover:scale-105 shadow-lg"
-                >
-                  Generate OTP
-                </button>
-              )}
+    <AnimatePresence>
+    <motion.div
+      className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 backdrop-blur-md z-50"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <motion.div
+        className={`relative w-full max-w-sm p-8 rounded-xl shadow-2xl transition-all duration-300 ${
+          theme === "dark"
+            ? "bg-gray-900 bg-opacity-80 text-white border border-gray-700 shadow-gray-800"
+            : "bg-white bg-opacity-90 text-gray-900 border border-gray-300 shadow-lg"
+        }`}
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.8, opacity: 0 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+      >
+        {/* Close Button */}
+        <button
+          onClick={handleClose}
+          className="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold transition duration-300"
+        >
+          &times;
+        </button>
 
-              {!isLogin && showOtpInput && (
-                <>
-                  <input
-                    type="text"
-                    value={otp}
-                    onChange={(event) => setOtp(event.target.value)}
-                    placeholder="Enter OTP"
-                    required
-                    className={`w-full p-3 rounded-lg border ${otp ? 'border-green-500' : 'border-gray-300'} focus:ring-2 focus:ring-green-500 focus:outline-none ${theme === 'dark' ? 'bg-gray-700 text-white' : 'text-gray-700'}`}
-                  />
-                  <button
-                    type="submit"
-                    className="w-full py-3 bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-bold rounded-lg transition-transform transform hover:scale-105 shadow-lg"
-                  >
-                    Register
-                  </button>
-                </>
-              )}
-              <p
-                onClick={toggleLogin}
-                className="text-center text-blue-500 text-sm cursor-pointer hover:underline"
-              >
-                {isLogin ? "Don't have an account? Register" : "Already have an account? Login"}
-              </p>
-              {
-                isLogin && !showOtpInput && (
-                  <button type="submit" className="w-full py-3 bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-bold rounded-lg transition-transform transform hover:scale-105 shadow-lg">Submit</button>
-                )
-              }
-              {isLogin && (
-                <div className="text-center mt-2">
-                  <Link
-                    to="/forgot-password"
-                    onClick={handleClose}
-                    className="text-sm text-blue-500 hover:text-blue-700"
-                  >
-                    Forgot Password?
-                  </Link>
-                </div>
-              )}
-            </form>
-          </div>
+        {/* Heading */}
+        <div className="text-center mb-6">
+          <h2
+            className={`text-3xl font-extrabold transition duration-300 ${
+              theme === "dark" ? "text-white" : "text-gray-900"
+            }`}
+          >
+            {isLogin ? "Login" : "Register"}
+          </h2>
+          <p
+            className={`text-sm mt-2 transition duration-300 ${
+              theme === "dark" ? "text-gray-300" : "text-gray-700"
+            }`}
+          >
+            {isLogin
+              ? "Welcome back! Please login to your account."
+              : "Create your account to get started."}
+          </p>
         </div>
+
+        {/* Add your form fields here */}
+        <div className="text-center">
+        <form onSubmit={isLogin ? login : register} className="flex flex-col gap-5 p-6 bg-opacity-90 rounded-xl backdrop-blur-lg shadow-2xl border border-gray-300 dark:border-gray-700 transition-all duration-300">
+  
+  {/* Username / Email Input */}
+  <input
+    type="text"
+    value={loginCredential}
+    onChange={(event) => setLoginCredential(event.target.value)}
+    placeholder={isLogin ? "Email or Username" : "Username"}
+    required
+    className={`w-full p-3 rounded-lg border transition-all duration-300 outline-none ${
+      loginCredential
+        ? "border-green-500 shadow-md"
+        : "border-gray-300 dark:border-gray-600"
+    } focus:ring-2 focus:ring-green-500 dark:bg-gray-700 dark:text-white`}
+  />
+
+  {!isLogin && (
+    <>
+      {/* Email Input */}
+      <input
+        type="email"
+        value={email}
+        onChange={(event) => setEmail(event.target.value)}
+        placeholder="Email"
+        required
+        className={`w-full p-3 rounded-lg border transition-all duration-300 outline-none ${
+          email ? "border-green-500 shadow-md" : "border-gray-300 dark:border-gray-600"
+        } focus:ring-2 focus:ring-green-500 dark:bg-gray-700 dark:text-white`}
+      />
+
+      {/* Full Name */}
+      <input
+        type="text"
+        value={name}
+        onChange={(event) => setName(event.target.value)}
+        placeholder="Full Name"
+        required
+        className={`w-full p-3 rounded-lg border transition-all duration-300 outline-none ${
+          name ? "border-green-500 shadow-md" : "border-gray-300 dark:border-gray-600"
+        } focus:ring-2 focus:ring-green-500 dark:bg-gray-700 dark:text-white`}
+      />
+
+      {/* Location */}
+      <input
+        type="text"
+        value={location}
+        onChange={(event) => setLocation(event.target.value)}
+        placeholder="Location (Optional)"
+        className={`w-full p-3 rounded-lg border transition-all duration-300 outline-none ${
+          location ? "border-green-500 shadow-md" : "border-gray-300 dark:border-gray-600"
+        } focus:ring-2 focus:ring-green-500 dark:bg-gray-700 dark:text-white`}
+      />
+
+      {/* Profile Picture */}
+      <input
+        type="text"
+        value={picture}
+        onChange={(event) => setPicture(event.target.value)}
+        placeholder="Profile Picture URL (Optional)"
+        className={`w-full p-3 rounded-lg border transition-all duration-300 outline-none ${
+          picture ? "border-green-500 shadow-md" : "border-gray-300 dark:border-gray-600"
+        } focus:ring-2 focus:ring-green-500 dark:bg-gray-700 dark:text-white`}
+      />
+
+      {/* Date of Birth */}
+      <input
+        type="date"
+        value={dob}
+        onChange={(event) => setDob(event.target.value)}
+        max={getYesterdayDate()}
+        className={`w-full p-3 rounded-lg border transition-all duration-300 outline-none ${
+          dob ? "border-green-500 shadow-md" : "border-gray-300 dark:border-gray-600"
+        } focus:ring-2 focus:ring-green-500 dark:bg-gray-700 dark:text-white`}
+      />
+    </>
+  )}
+
+  {/* Password */}
+  <input
+    type="password"
+    value={password}
+    onChange={(event) => setPassword(event.target.value)}
+    placeholder="Password"
+    required
+    className={`w-full p-3 rounded-lg border transition-all duration-300 outline-none ${
+      password ? "border-green-500 shadow-md" : "border-gray-300 dark:border-gray-600"
+    } focus:ring-2 focus:ring-green-500 dark:bg-gray-700 dark:text-white`}
+  />
+
+  {/* Error Message */}
+  {error && (
+    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg shadow-md">
+      <span>{error}</span>
+    </div>
+  )}
+
+  {/* Generate OTP */}
+  {!isLogin && !showOtpInput && (
+    <button
+      type="button"
+      onClick={handleGenerateOtp}
+      className="w-full py-3 bg-gradient-to-r from-blue-300 to-blue-500 hover:from-blue-600 hover:to-blue-300 text-white font-bold rounded-lg transition-transform transform hover:scale-105 shadow-lg"
+    >
+      Generate OTP
+    </button>
+  )}
+
+  {/* OTP Input */}
+  {!isLogin && showOtpInput && (
+    <>
+      <input
+        type="text"
+        value={otp}
+        onChange={(event) => setOtp(event.target.value)}
+        placeholder="Enter OTP"
+        required
+        className={`w-full p-3 rounded-lg border transition-all duration-300 outline-none ${
+          otp ? "border-green-500 shadow-md" : "border-gray-300 dark:border-gray-600"
+        } focus:ring-2 focus:ring-green-500 dark:bg-gray-700 dark:text-white`}
+      />
+
+      {/* Register Button */}
+      <button
+        type="submit"
+        className="w-full py-3 bg-gradient-to-r from-blue-300 to-blue-500 hover:from-blue-600 hover:to-blue-300 text-white font-bold rounded-lg transition-transform transform hover:scale-105 shadow-lg"
+      >
+        Register
+      </button>
+    </>
+  )}
+
+  {/* Toggle Login/Register */}
+  <p
+    onClick={toggleLogin}
+    className="text-center text-blue-500 text-sm cursor-pointer hover:underline"
+  >
+    {isLogin ? "Don't have an account? Register" : "Already have an account? Login"}
+  </p>
+
+  {/* Login Submit Button */}
+  {isLogin && !showOtpInput && (
+    <button
+      type="submit"
+      className="w-full py-3 bg-gradient-to-r  from-blue-300 to-blue-500 hover:from-blue-600 hover:to-blue-300 text-white font-bold rounded-lg transition-transform transform hover:scale-105 shadow-lg"
+    >
+      Submit
+    </button>
+  )}
+
+  {/* Forgot Password */}
+  {isLogin && (
+    <div className="text-center mt-2">
+      <Link
+        to="/forgot-password"
+        onClick={handleClose}
+        className="text-sm text-blue-500 hover:text-blue-700"
+      >
+        Forgot Password?
+      </Link>
+    </div>
+  )}
+</form>
+
+        </div>
+      </motion.div>
+    </motion.div>
+  </AnimatePresence>
       )}
     </>
   );

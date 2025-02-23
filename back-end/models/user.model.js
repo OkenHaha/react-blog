@@ -64,7 +64,19 @@ const userSchema = new Schema(
         authorLevel :{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Level'
-        }
+        },
+        achievements:[{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Achievement"
+        }],
+        followers: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        }],
+        following: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        }]
     },{timestamps: true}
 );
 

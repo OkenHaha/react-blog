@@ -12,8 +12,114 @@ import './shareBtn.css';
 import { FaFacebook, FaTwitter, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { FaLink } from "react-icons/fa6";
 import { MdEmail, MdShare, MdClose, MdCheck } from 'react-icons/md';
-
+import { useSelector } from 'react-redux';
+import SaveForLaterButton from '../components/SaveForLaterComp/SaveforlaterButton';
 Modal.setAppElement('#root');
+
+const ReactionButton = ({ articleId, usertoken }) => {
+  const [reactionCounts, setReactionCounts] = useState({});
+  const [userReaction, setUserReaction] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [showReactions, setShowReactions] = useState(false);
+  const validEmojis = ['👍', '❤️', '😂', '😮', '😢', '😡'];
+
+  useEffect(() => {
+    const fetchReactions = async () => {
+      try {
+        const response = await axios.get(`${link}/api/article/reactions/${articleId}`);
+        setReactionCounts(response.data.reactionCounts || {});
+        const userReaction = response.data.reactions.find(r => r.user?._id === JSON.parse(atob(usertoken.split('.')[1])).userId)?.emoji;
+        setUserReaction(userReaction);
+      } catch (error) {
+        console.error('Error fetching reactions:', error);
+      }
+    };
+    fetchReactions();
+  }, [articleId, usertoken]);
+
+  const handleReaction = async (emoji) => {
+    if (!usertoken) {
+      alert('Please login to react');
+      return;
+    }
+    
+    try {
+      setLoading(true);
+      if (userReaction === emoji) {
+        await axios.delete(`${link}/api/article/react/${articleId}`, {
+          headers: { Authorization: `Bearer ${usertoken}` }
+        });
+        setUserReaction(null);
+        setReactionCounts(prev => ({ ...prev, [emoji]: (prev[emoji] || 1) - 1 }));
+      } else {
+        await axios.post(`${link}/api/article/react/${articleId}`, { emoji }, {
+          headers: { Authorization: `Bearer ${usertoken}` }
+        });
+        if (userReaction) {
+          setReactionCounts(prev => ({
+            ...prev,
+            [userReaction]: (prev[userReaction] || 1) - 1,
+            [emoji]: (prev[emoji] || 0) + 1
+          }));
+        } else {
+          setReactionCounts(prev => ({ ...prev, [emoji]: (prev[emoji] || 0) + 1 }));
+        }
+        setUserReaction(emoji);
+      }
+    } catch (error) {
+      console.error('Error updating reaction:', error);
+      alert(error.response?.data?.error || 'Failed to update reaction');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="relative inline-block">
+      {/* Main reaction button that shows current reaction or default */}
+      <button
+        onMouseEnter={() => setShowReactions(true)}
+        className={`p-2 rounded-lg transition-all duration-200 
+          ${userReaction ? 'bg-blue-100 dark:bg-yellow-900' : 'bg-gray-100 dark:bg-gray-700'}
+        `}
+      >
+        <span className="text-xl">{userReaction || '👍'}</span>
+        <span className="ml-2 text-sm font-medium">
+          {reactionCounts[userReaction] || reactionCounts['👍'] || 0}
+        </span>
+      </button>
+
+      {/* Reaction picker popup */}
+      {showReactions && (
+        <div 
+          className="absolute bottom-full left-0 mb-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2 flex gap-1"
+          onMouseEnter={() => setShowReactions(true)}
+          onMouseLeave={() => setShowReactions(false)}
+        >
+          {validEmojis.map(emoji => (
+            <button
+              key={emoji}
+              onClick={() => {
+                handleReaction(emoji);
+                setShowReactions(false);
+              }}
+              disabled={loading}
+              className={`p-2 rounded-lg transition-all duration-200 hover:scale-125 
+                ${userReaction === emoji 
+                  ? 'bg-blue-100 dark:bg-yellow-900' 
+                  : 'hover:bg-gray-100 dark:hover:bg-gray-700'
+                }
+              `}
+              title={userReaction === emoji ? 'Remove reaction' : 'Add reaction'}
+            >
+              <span className="text-xl">{emoji}</span>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 const Article = ({ loggedInUserId }) => {
   const { name } = useParams();
@@ -31,6 +137,9 @@ const Article = ({ loggedInUserId }) => {
   const [isShareSent, setIsShareSent] = useState(false);
   const [activeHover, setActiveHover] = useState(null);
   const url = `${link}`;
+
+    const isLoggedIn = useSelector((state) => state.auth.authStatus);
+
 
   useEffect(() => {
     const fetchArticleData = async () => {
@@ -215,6 +324,10 @@ const Article = ({ loggedInUserId }) => {
                 initialLikes={article.likes || 0}
                 initialLikedState={likedBy?.includes(userId)}
               />
+              <ReactionButton 
+                articleId={article._id}
+                usertoken={localStorage.getItem('token')}
+              />
               <button
                 onClick={() => {
                   if (!localStorage.getItem('token')) {
@@ -291,9 +404,38 @@ const Article = ({ loggedInUserId }) => {
                         </button>
                       ))}
                     </div>
+                    
+                    
                   )}
                 </div>
               </div>
+                  {isLoggedIn ? <SaveForLaterButton articleId={article._id} usertoken={localStorage.getItem('token')} /> : (
+                    <button
+  onClick={() => {
+    console.log(article);
+
+    // Retrieve saved articles or initialize an empty array
+    let savedArticles = JSON.parse(localStorage.getItem("SavedArray") || "[]");
+
+    // Check if article is already in the list
+    const index = savedArticles.findIndex(item => item._id === article._id);
+
+    if (index > -1) {
+      // If article exists, remove it
+      savedArticles.splice(index, 1);
+    } else {
+      // Otherwise, add it
+      savedArticles.push(article);
+    }
+
+    // Save updated array back to localStorage
+    localStorage.setItem("SavedArray", JSON.stringify(savedArticles));
+  }}
+>
+  Save For Later
+</button>
+
+                  )}
             </div>
             
             {isAuthor && (

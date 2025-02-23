@@ -103,7 +103,7 @@ function Centre() {
             Our Mission, Vision & Values
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
-            <div className="bg-white dark:bg-gray-800 p-6 border-2 border-gray-800 dark:border-gray-700 rounded-lg ">
+          <div className="bg-white dark:bg-gray-800 p-6 border-2 border-gray-800 dark:border-gray-700 rounded-lg transform hover:translate-y-[-5px] hover:translate-x-[-5px] transition-transform duration-300 shadow-[0px_0px_10px_2px_rgba(0,112,255,0.5)] hover:shadow-[0px_0px_20px_4px_rgba(0,112,255,0.7)]">
               <img
                 src={mission}
                 alt="Our Mission"
@@ -121,7 +121,7 @@ function Centre() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 p-6 border-2 border-gray-800 dark:border-gray-700 rounded-lg">
+            <div className="bg-white dark:bg-gray-800 p-6 border-2 border-gray-800 dark:border-gray-700 rounded-lg transform hover:translate-y-[-5px] hover:translate-x-[-5px] transition-transform duration-300 shadow-[0px_0px_10px_2px_rgba(0,112,255,0.5)] hover:shadow-[0px_0px_20px_4px_rgba(0,112,255,0.7)]">
               <img
                 src={vision}
                 alt="Our Vision"
@@ -139,7 +139,7 @@ function Centre() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 p-6 border-2 border-gray-800 dark:border-gray-700 rounded-lg ">
+            <div className="bg-white dark:bg-gray-800 p-6 border-2 border-gray-800 dark:border-gray-700 rounded-lg transform hover:translate-y-[-5px] hover:translate-x-[-5px] transition-transform duration-300 shadow-[0px_0px_10px_2px_rgba(0,112,255,0.5)] hover:shadow-[0px_0px_20px_4px_rgba(0,112,255,0.7)]">
               <img
                 src={values}
                 alt="Our Values"
@@ -157,6 +157,7 @@ function Centre() {
                 community.
               </p>
             </div>
+
           </div>
         </div>
       </section>
@@ -190,7 +191,7 @@ function Centre() {
         </div>
       </section>
 
-      <section className="relative py-16 overflow-hidden">
+      <section id="how-to-get-started" className="relative py-16 overflow-hidden">
         <div className="relative container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2

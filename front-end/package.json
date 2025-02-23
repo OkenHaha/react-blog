@@ -19,15 +19,20 @@
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
     "@reduxjs/toolkit": "^2.5.0",
     "@uiw/react-md-editor": "^4.0.5",
     "@vitejs/plugin-react": "^4.3.4",
     "axios": "^1.7.7",
     "chart.js": "^4.4.7",
+    "date-fns": "^4.1.0",
     "dotenv": "^16.4.7",
     "framer-motion": "^11.18.1",
     "gsap": "^3.12.7",
+    "html-to-image": "^1.11.11",
     "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.475.0",
     "react": "^18.2.0",
     "react-animated-cursor": "^2.11.2",
     "react-chartjs-2": "^5.3.0",
@@ -50,6 +55,6 @@
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8",
     "vite": "^6.0.11",
-    "vite-plugin-node-polyfills": "^0.22.0"
+    "vite-plugin-node-polyfills": "^0.23.0"
   }
 }

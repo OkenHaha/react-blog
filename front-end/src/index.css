@@ -22,7 +22,7 @@
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.5s, color 0.5s;
-    cursor: none;
+    /* cursor: none; */
   }
   
   .theme-toggler {
@@ -42,11 +42,11 @@
   
   /* Hide default cursor */
   body {
-    cursor: none;
+    /* cursor: none; */
   }
   
   /* Show default cursor for interactive elements */
   a, button, input, textarea, select {
-    cursor: none;
+    /* cursor: none; */
   }
   

@@ -18,4 +18,15 @@ const GettingArticle = () => {
     );
 }
 
-export { CreatingArticleLoader,GettingArticle };
+
+const LoadingSpinner = () => {
+    return (
+        <div className="creating-loader">
+            <div className="loader"></div>
+            <span className="loading">Loading Content</span>
+        </div>
+    );
+};
+
+
+export { CreatingArticleLoader,GettingArticle , LoadingSpinner};

@@ -159,12 +159,13 @@ const getProfile = async (req, res) => {
 
     // Verify the token
     const decoded = jwt.verify(token, secretKey);
-    const user = await User.findById(decoded.userId).populate('authorLevel');
+    const user = await User.findById(decoded.userId).populate('authorLevel').populate('achievements');
     if (!user) {
       console.error(`User not found for token with userId: ${decoded.userId}.`);
       return res.status(404).json({ error: "User not found." });
     }
 
+    await user.populate({path:'likedArticles', strictPopulate:false})
     // Send back detailed user profile data
     res.json({
       user
@@ -482,9 +483,8 @@ const getOtherUser = async (req, res) => {
     const { userId } = req.params;
     
     const user = await User.findById(userId).select(
-      'username name location picture dob age accountCreated articlesPublished'
+      'username name location picture dob age accountCreated articlesPublished followers following'
     );
-    
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
@@ -496,6 +496,107 @@ const getOtherUser = async (req, res) => {
   }
 };
 
+const followUser = async (req, res) => {
+    try {
+        const { userToFollowId } = req.params;
+        
+        // Get current user from token
+        const authHeader = req.headers.authorization;
+        if (!authHeader) {
+            return res.status(401).json({ error: "No token provided." });
+        }
+        const token = authHeader.split(' ')[1];
+        const decoded = jwt.verify(token, secretKey);
+        const currentUserId = decoded.userId;
 
+        // Check if trying to follow self
+        if (currentUserId === userToFollowId) {
+            return res.status(400).json({ error: "You cannot follow yourself" });
+        }
 
-export { getProfile, registerUser, loginUser, editProfile, deleteUserAccount, resetPassword, getOtherUser };
+        // Find both users
+        const userToFollow = await User.findById(userToFollowId);
+        const currentUser = await User.findById(currentUserId);
+
+        console.log("userToFollow",userToFollow)
+        console.log("currentUser",currentUser)
+
+        if (!userToFollow || !currentUser) {
+            return res.status(404).json({ error: "User not found" });
+        }
+
+        // Check if already following
+        if (currentUser.following.includes(userToFollowId)) {
+            return res.status(400).json({ error: "You are already following this user" });
+        }
+
+        // Add to following and followers lists
+        currentUser.following.push(userToFollowId);
+        userToFollow.followers.push(currentUserId);
+
+        await currentUser.save();
+        await userToFollow.save();
+
+        res.status(200).json({ 
+            message: "Successfully followed user",
+            following: currentUser.following,
+            followers: userToFollow.followers
+        });
+
+    } catch (error) {
+        console.error("Error in followUser:", error);
+        res.status(500).json({ error: "An error occurred while following user" });
+    }
+};
+
+const unfollowUser = async (req, res) => {
+  try {
+      const { userToUnfollowId } = req.params;
+      
+      // Get current user from token
+      const authHeader = req.headers.authorization;
+      if (!authHeader) {
+          return res.status(401).json({ error: "No token provided." });
+      }
+      const token = authHeader.split(' ')[1];
+      const decoded = jwt.verify(token, secretKey);
+      const currentUserId = decoded.userId;
+
+      // Check if trying to unfollow self
+      if (currentUserId === userToUnfollowId) {
+          return res.status(400).json({ error: "You cannot unfollow yourself" });
+      }
+
+      // Find both users
+      const userToUnfollow = await User.findById(userToUnfollowId);
+      const currentUser = await User.findById(currentUserId);
+
+      if (!userToUnfollow || !currentUser) {
+          return res.status(404).json({ error: "User not found" });
+      }
+
+      // Check if actually following
+      if (!currentUser.following.includes(userToUnfollowId)) {
+          return res.status(400).json({ error: "You are not following this user" });
+      }
+
+      // Remove from following and followers lists
+      currentUser.following = currentUser.following.filter(id => id.toString() !== userToUnfollowId);
+      userToUnfollow.followers = userToUnfollow.followers.filter(id => id.toString() !== currentUserId);
+
+      await currentUser.save();
+      await userToUnfollow.save();
+
+      res.status(200).json({ 
+          message: "Successfully unfollowed user",
+          following: currentUser.following,
+          followers: userToUnfollow.followers
+      });
+
+  } catch (error) {
+      console.error("Error in unfollowUser:", error);
+      res.status(500).json({ error: "An error occurred while unfollowing user" });
+  }
+};
+
+export { getProfile, registerUser, loginUser, editProfile, deleteUserAccount, resetPassword, getOtherUser, followUser, unfollowUser };

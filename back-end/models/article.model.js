@@ -28,8 +28,30 @@ const articleSchema = new mongoose.Schema({
   likes: { type: Number, default: 0 },
   likedBy: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   tag:{type:String},
-  isDraft:{type: Boolean},
+  status: {
+    type: String,
+    enum: ['draft', 'published'],
+    default: 'draft'
+  },
+  reactions: [{
+    emoji: { 
+      type: String,
+      enum: ['👍', '❤️', '😂', '😮', '😢', '😡']
+    },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
+    }
+  }],
 },{timestamps:true});
+
+articleSchema.methods.getReactionCounts = function() {
+  const counts = {};
+  this.reactions.forEach(reaction => {
+    counts[reaction.emoji] = (counts[reaction.emoji] || 0) + 1;
+  });
+  return counts;
+};
 
 const Article = mongoose.model('Article', articleSchema);
 

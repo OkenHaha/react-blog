@@ -115,7 +115,7 @@ const ForgotPassword = ({ theme }) => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="Email address"
-                            className={`appearance-none rounded-lg relative block w-full px-3 py-2 border ${theme === 'dark' ? 'bg-gray-700 border-gray-600' : 'border-gray-300'
+                            className={`appearance-none rounded-lg relative block w-full px-3 py-2 border ${theme === 'dark' ? 'bg-gray-700 border-gray-600 text-white' : 'border-gray-300'
                                 } placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm`}
                             disabled={showOtpForm}
                         />
@@ -127,7 +127,7 @@ const ForgotPassword = ({ theme }) => {
                                     value={otp}
                                     onChange={(e) => setOtp(e.target.value)}
                                     placeholder="Enter OTP"
-                                    className={`appearance-none rounded-lg relative block w-full px-3 py-2 border ${theme === 'dark' ? 'bg-gray-700 border-gray-600' : 'border-gray-300'
+                                    className={`appearance-none rounded-lg relative block w-full px-3 py-2 border ${theme === 'dark' ? 'bg-gray-700 border-gray-600 text-white' : 'border-gray-300'
                                         } placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm`}
                                 />
                                 <input
@@ -135,7 +135,7 @@ const ForgotPassword = ({ theme }) => {
                                     value={newPassword}
                                     onChange={(e) => setNewPassword(e.target.value)}
                                     placeholder="New Password"
-                                    className={`appearance-none rounded-lg relative block w-full px-3 py-2 border ${theme === 'dark' ? 'bg-gray-700 border-gray-600' : 'border-gray-300'
+                                    className={`appearance-none rounded-lg relative block w-full px-3 py-2 border ${theme === 'dark' ? 'bg-gray-700 border-gray-600 text-white' : 'border-gray-300'
                                         } placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm`}
                                 />
                                 <input
@@ -143,7 +143,7 @@ const ForgotPassword = ({ theme }) => {
                                     value={confirmPassword}
                                     onChange={(e) => setConfirmPassword(e.target.value)}
                                     placeholder="Confirm New Password"
-                                    className={`appearance-none rounded-lg relative block w-full px-3 py-2 border ${theme === 'dark' ? 'bg-gray-700 border-gray-600' : 'border-gray-300'
+                                    className={`appearance-none rounded-lg relative block w-full px-3 py-2 border ${theme === 'dark' ? 'bg-gray-700 border-gray-600 text-white' : 'border-gray-300'
                                         } placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm`}
                                 />
                             </>
