@@ -54,7 +54,10 @@ function Footer() {
           <ul className="space-y-4">
          {['About', 'Home', 'Article'].map((item) => (
           <li key={item}>
-          <Link to={`/${item.toLowerCase().replace(/\s+/g, '-')}`} className="group dark:hover:text-gray-200 dark:text-gray-400 flex items-center text-gray-600 hover:text-gray-900">
+          <Link 
+            to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/\s+/g, '-')}`} 
+            className="group dark:hover:text-gray-200 dark:text-gray-400 flex items-center text-gray-600 hover:text-gray-900"
+          >
           <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity" />
           {item}
          </Link>
