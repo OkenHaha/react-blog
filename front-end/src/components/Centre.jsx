@@ -168,6 +168,62 @@ function Centre() {
         </div>
       </section>
 
+      <section id="testimonials" className="py-16 bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-4xl font-bold font-serif mb-8 text-indigo-900 dark:text-yellow-300">
+            What Our Community Says
+          </h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300 mb-10">
+            See what our contributors and users have to say about us!
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 text-lg">
+            {[
+              {
+                name: "Alex Johnson",
+                role: "Web Developer",
+                image: "https://randomuser.me/api/portraits/men/32.jpg",
+                text: "An amazing platform! Writing and sharing blogs has never been this fun and engaging!",
+              },
+              {
+                name: "Sarah Williams",
+                role: "Content Creator",
+                image: "https://randomuser.me/api/portraits/women/45.jpg",
+                text: "The UI is absolutely stunning. Writing content here feels like a premium experience!",
+              },
+              {
+                name: "David Smith",
+                role: "Tech Enthusiast",
+                image: "https://randomuser.me/api/portraits/men/67.jpg",
+                text: "A great place for bloggers. The design and user experience are top-notch!",
+              },
+            ].map((testimonial, index) => (
+              <div
+                key={index}
+                className="relative bg-white dark:bg-gray-900 bg-opacity-90 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-gray-300 dark:border-gray-700 transform transition-all hover:-translate-y-2"
+              >
+                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-16 h-16 rounded-full border-4 border-indigo-500 dark:border-yellow-400 shadow-lg"
+                  />
+                </div>
+                <div className="mt-10 text-center">
+                  <h3 className="text-xl font-semibold text-indigo-900 dark:text-yellow-300">
+                    {testimonial.name}
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</p>
+                  <p className="mt-4 text-gray-700 dark:text-gray-300 italic">
+                    “{testimonial.text}”
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       <section className="relative py-16 overflow-hidden">
         <div className="relative container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
