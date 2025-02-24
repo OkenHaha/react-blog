@@ -1,0 +1,35 @@
+{
+    "blogs": [
+      {
+        "name": "learn-react",
+        "title": "The Fastest Way to Learn React",
+        "thumbnail": "/images/blog1.jpeg",
+        "content": [
+          "Welcome! Today we're going to talk about React.",
+          "React is a powerful JavaScript library for building user interfaces.",
+          "Here’s the fastest way to learn React step-by-step."
+        ]
+      },
+      {
+        "name": "learn-node",
+        "title": "How to Build a Node Server in 10 Minutes",
+        "thumbnail": "/images/blog2.jpeg",
+        "content": [
+          "In this article, we'll show you how to set up a Node.js server in just a few minutes.",
+          "Node.js is an open-source, cross-platform JavaScript runtime environment.",
+          "We will walk through setting up your server, creating endpoints, and running it locally."
+        ]
+      },
+      {
+        "name": "my-thoughts-on-learning-react",
+        "title": "My Thoughts on Learning ReactJS",
+        "thumbnail": "/images/blog3.jpeg",
+        "content": [
+          "Learning ReactJS can be tough, but it’s totally worth the effort.",
+          "In this blog, I’ll share my personal thoughts on how I learned React.",
+          "React is flexible and easy to learn once you understand the basic concepts."
+        ]
+      }
+    ]
+  }
+  
