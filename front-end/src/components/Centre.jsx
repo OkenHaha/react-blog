@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Home from "../assets/blog.png";
 import Create from "../assets/write-blog.jpg";
 import Read from "../assets/read-blog.jpg";
@@ -9,6 +10,8 @@ import Contributors from "../pages/Contributors";
 import ContributorsLink from "./contributors/ContributorsLink";
 
 function Centre() {
+  const navigate = useNavigate();
+
   return (
     <div
       id="container"
@@ -30,7 +33,10 @@ function Centre() {
             Dive into exciting content and unleash your creativity with us. Join
             the journey of storytelling, innovation, and ideas.
           </p>
-          <button className="px-8 py-3 bg-blue-800 text-white dark:bg-yellow-500 dark:text-gray-900 text-lg rounded-lg shadow-lg">
+          <button 
+            onClick={() => navigate('/addarticle')}
+            className="px-8 py-3 bg-blue-800 text-white dark:bg-yellow-500 dark:text-gray-900 text-lg rounded-lg shadow-lg hover:bg-blue-700 dark:hover:bg-yellow-400 transition-colors duration-300"
+          >
             Read • Write • Repeat
           </button>
         </div>
