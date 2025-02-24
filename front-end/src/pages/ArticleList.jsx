@@ -7,7 +7,7 @@ import LikeButton from '../components/LikeButton';
 import NoarticleImage from '../assets/noarticle.png';
 import { useSelector } from 'react-redux';
 import TidioChat from "../components/Tidio";
-
+import Sam from './sampleArticles';
 const ArticleList = () => {
   const [articles, setArticles] = useState([]);
   const [filteredArticles, setFilteredArticles] = useState([]);
@@ -326,7 +326,7 @@ const ArticleList = () => {
              <option value="Trending-Topics">Trending-Topics</option>
              <option value="Others">Others</option>
             </select>
-
+            
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
@@ -461,25 +461,29 @@ const ArticleList = () => {
           </>
         )}
 
-        {/* No Articles State */}
-        {!loading && filteredArticles.length === 0 && (
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="text-center py-16"
-          >
-            <img 
-              src={NoarticleImage} 
-              alt="No articles" 
-              className="mx-auto w-64 h-64 mb-6 opacity-70"
-            />
-            <h2 className="text-2xl font-bold text-indigo-600 mb-4">
-              No Articles Found
-            </h2>
-            <p className="text-gray-500">
-              Check back later or start writing your first article!
-            </p>
-          </motion.div>
+          {/* No Articles State */}
+          {!loading && filteredArticles.length === 0 && (
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="text-center py-16"
+            >
+              <div className="notfound opacity-50 mt-[-120px]">
+              <img 
+                src={NoarticleImage} 
+                alt="No articles" 
+                className=" mx-auto w-64 h-64 opacity-70"
+              />
+              <h2 className="text-2xl font-bold text-indigo-600 mb-4">
+                No Articles Found - Explore sample articles
+              </h2>
+              <p className="text-gray-500">
+                Check back later or start writing your first article!
+              </p>
+              
+              </div>
+              <Sam/>
+            </motion.div>
         )}
       </div>
     </motion.div>

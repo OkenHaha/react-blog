@@ -68,7 +68,7 @@ function Footer() {
           <div className="space-y-6">
             <h3 className="text-lg dark:text-gray-200 font-bold">Support</h3>
             <ul className="space-y-4">
-            {['FAQ', 'Contributor', 'Privacy Policy'].map((item) => (
+            {['FAQ', 'Contributors', 'Privacy Policy'].map((item) => (
             <li key={item}>
             <Link to={`/${item.toLowerCase().replace(/\s+/g, '-')}`} className="group flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200">
            <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity" />
