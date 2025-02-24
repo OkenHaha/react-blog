@@ -1,4 +1,4 @@
-import { useEffect, Suspense, lazy } from "react";
+import { useEffect, useState, Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme as toggle } from "./store/authSlice";
@@ -8,6 +8,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import { LoadingSpinner } from "./Utils/loader";
 import AchievementPage from "./components/AchievementComp/AchievementComp";
 import SavedArticles from "./pages/SavedArticles";
+import Preloader from "./components/Preloader";
 
 // Lazy load components
 const Home = lazy(() => import("./pages/Home"));
@@ -28,7 +29,9 @@ const PublicProfile = lazy(() => import("./pages/PublicProfile"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const DraftsPage = lazy(() => import("./pages/DraftsPage"));
 
+
 function App() {
+  const [loading, setLoading] = useState(true);
   const theme = useSelector((state) => state.auth.theme);
   const loggedInUser = useSelector((state) => state.auth.user); // Get the logged-in user's data
   const loggedInUserId = loggedInUser ? loggedInUser._id : null; // Extract user ID if logged in
@@ -38,9 +41,21 @@ function App() {
     document.documentElement.className = theme;
   }, [theme]);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
   const toggleTheme = () => {
     dispatch(toggle());
   };
+
+  if (loading) {
+    return <Preloader />;
+  }
 
   return (
     <Router>
