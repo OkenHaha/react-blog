@@ -60,7 +60,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
+      <Navbar />
       <div className="w-full">
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
